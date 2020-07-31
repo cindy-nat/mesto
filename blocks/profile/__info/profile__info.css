@@ -1,0 +1,7 @@
+.profile__info {
+  color: white;
+  margin-left: 27px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
