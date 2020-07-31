@@ -20,3 +20,6 @@
 @import url('../blocks/card/__rectangle/card__rectangle.css');
 @import url('../blocks/card/__name/card__name.css');
 @import url('../blocks/card/__like/card__like.css');
+@import url('../blocks/footer/footer.css');
+@import url('../blocks/page/__footer/page__footer.css');
+@import url('../blocks/footer/__text/footer__text.css');
