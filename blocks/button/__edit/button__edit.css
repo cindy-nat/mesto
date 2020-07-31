@@ -1,0 +1,17 @@
+.button__edit {
+ background-color: black;
+ background-image: url('../../../images/button_edit.svg');
+ background-position: center;
+ background-repeat: no-repeat;
+ border: 1px solid #FFFFFF;
+ border-radius: 0;
+ width: 24px;
+ height: 24px;
+ margin: 37px 0 0 20px;
+ padding: 0;
+}
+
+.button__edit:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
