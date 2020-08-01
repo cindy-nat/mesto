@@ -1,7 +1,14 @@
 .profile__info {
   color: white;
-  margin-left: 27px;
+  margin: 18px 0 0 27px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 336px;
+}
+
+@media screen and (max-width:320px) {
+  .profile__info {
+    margin: 0 auto 32px;
+justify-content: center;
+  }
 }
