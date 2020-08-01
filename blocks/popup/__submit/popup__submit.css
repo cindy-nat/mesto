@@ -5,4 +5,10 @@
   border: none;
   margin: 18px auto;
   height: 50.15px;
+  border-radius: 2px;
+}
+
+.popup__submit:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
