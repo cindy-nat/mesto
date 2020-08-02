@@ -7,8 +7,10 @@
  border-radius: 0;
  width: 24px;
  height: 24px;
- margin: 20px 0 0 17px;
  padding: 0;
+ position: absolute;
+ top: 20px;
+ right: -40px;
 }
 
 .button__edit:hover {
@@ -20,6 +22,7 @@
   .button__edit {
     width: 18px;
     height: 18px;
-    margin-top: 30px;
+    top: 33px;
+    right: -25px;
   }
 }

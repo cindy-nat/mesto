@@ -4,6 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 336px;
+  position: relative;
+  flex-direction: column;
 }
 
 @media screen and (max-width:570px) {
