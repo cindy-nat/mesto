@@ -1,4 +1,4 @@
-.button__edit {
+.profile__button-edit {
  background-color: black;
  background-image: url('../../../images/button_edit.svg');
  background-position: center;
@@ -13,13 +13,13 @@
  right: -40px;
 }
 
-.button__edit:hover {
+.profile__button-edit:hover {
   cursor: pointer;
   opacity: 0.6;
 }
 
 @media screen and (max-width:320px) {
-  .button__edit {
+  .profile__button-edit {
     width: 18px;
     height: 18px;
     top: 33px;
