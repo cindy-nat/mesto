@@ -12,4 +12,9 @@
 
 .cards__like:hover {
   cursor: pointer;
+  opacity: 0.5;
+}
+
+.cards__like:active {
+  border: 1px solid grey;
 }
