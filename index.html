@@ -25,6 +25,7 @@
     <section class="cards">
       <div class="cards__item">
         <img src="./images/image_karachaevsk.jpg" alt="Карачаевск" class="cards__photo">
+        <button type="button" class="button__delete"></button>
         <div class="cards__rectangle">
           <h2 class="cards__name">Карачаевск</h2>
           <button type="button" class="cards__like"></button>
@@ -80,6 +81,17 @@
       <button type="button" class="popup__close"></button>
     </form>
   </div>
+
+  <div class="popup">
+    <form class="popup__form">
+      <p class="popup__title">Новое место</p>
+      <input type="text" class="popup__text popup__text_name" name="picture_name" placeholder="Название">
+      <input type="text" class="popup__text popup__text_description" name="urlimage" placeholder="Ссылка на картинку">
+      <button type="submit" class="popup__submit">Создать</button>
+      <button type="button" class="popup__close"></button>
+    </form>
+  </div>
+
   <script src="./scripts/main.js"></script>
 </body>
 </html>

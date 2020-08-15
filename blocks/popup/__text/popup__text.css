@@ -16,3 +16,10 @@
   outline: none;
   border: 3px solid #a0b8ea;
 }
+
+@media screen and (max-width:470px) {
+  .popup__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

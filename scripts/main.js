@@ -1,10 +1,10 @@
-let popup = document.querySelector('.popup');
-let popupOpenButton = document.querySelector('.profile__button-edit');
-let popupCloseButton = popup.querySelector('.popup__close');
-let nameInput = popup.querySelector('.popup__text_type_name');
-let jobInput =  popup.querySelector('.popup__text_type_description');
-let name = document.querySelector('.profile__name');
-let description = document.querySelector('.profile__description');
+const popup = document.querySelector('.popup');
+const popupOpenButton = document.querySelector('.profile__button-edit');
+const popupCloseButton = popup.querySelector('.popup__close');
+const nameInput = popup.querySelector('.popup__text_type_name');
+const jobInput =  popup.querySelector('.popup__text_type_description');
+const name = document.querySelector('.profile__name');
+const description = document.querySelector('.profile__description');
 
 function popupToogle () {
   popup.classList.toggle('popup_open');
