@@ -30,7 +30,7 @@ const popupOpenButton = document.querySelector('.profile__button-edit');
 const popupCloseButton = popupEdit.querySelector('.popup__close');
 const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
-const name = document.querySelector('.profile__name');
+let name = document.querySelector('.profile__name');
 const description = document.querySelector('.profile__description');
 
 //работа с формой редактирования профайла
@@ -76,18 +76,18 @@ const popupNewItemClose = popupNewItem.querySelector('.popup__close');
     newItemPhoto.alt = name;
     newItem.querySelector('.cards__name').textContent = name;
 
+    newItem.querySelector('.button__delete').addEventListener('click', event => {
+    const card = event.target.closest('.cards__item');
+    card.remove();
+    })
+
     cards.prepend(newItem);
   }
 
-  initialCards.forEach(function(item){
-    const newItem =  templateNewItem.content.cloneNode(true);
-    const newItemPhoto = newItem.querySelector('.cards__photo');
-    newItemPhoto.src = item.link;
-    newItemPhoto.alt = item.name;
-    newItem.querySelector('.cards__name').textContent = item.name;
-
-    cards.append(newItem);
-  });
+for (let i = 0; i < initialCards.length; i++) {
+  let card = initialCards[i];
+  addItemtoContainer(card.name, card.link);
+}
 
   popupNewItem.addEventListener('submit', event => {
     event.preventDefault();
