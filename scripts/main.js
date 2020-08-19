@@ -79,7 +79,13 @@ const popupNewItemClose = popupNewItem.querySelector('.popup__close');
     newItem.querySelector('.button__delete').addEventListener('click', event => {
     const card = event.target.closest('.cards__item');
     card.remove();
-    })
+    });
+
+    newItem.querySelector('.cards__like').addEventListener('click',event =>{
+      event.target.classList.toggle('cards__like_clicked');
+    });
+
+
 
     cards.prepend(newItem);
   }
