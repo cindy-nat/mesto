@@ -109,13 +109,12 @@ initialCards.forEach(card => {
     if(newName!=='' && newItemLink!=='') {
       addItemtoContainer(newName, newItemLink);
       popupToggleNewItem();
-      popupNewItem.reset();
     }
   })
 
 popupNewItemOpenButton.addEventListener('click', popupToggleNewItem);
 popupNewItemClose.addEventListener ('click', popupToggleNewItem);
-popupImageClose.addEventListener('click', event => popupImage.classList.toggle('popup_open'));
+popupImageClose.addEventListener('click', () => popupImage.classList.toggle('popup_open'));
 
 
 
