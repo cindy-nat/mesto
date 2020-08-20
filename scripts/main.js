@@ -61,6 +61,9 @@ const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
 const popupNewItemClose = popupNewItem.querySelector('.popup__close');
+const popupImage = document.querySelector('.popup-image');
+const popupImageClose = popupImage.querySelector('.popup__close');
+
 
 
   function popupToggleNewItem() {
@@ -85,15 +88,19 @@ const popupNewItemClose = popupNewItem.querySelector('.popup__close');
       event.target.classList.toggle('cards__like_clicked');
     });
 
-
+  newItem.querySelector('.cards__photo').addEventListener('click', event => {
+    popupImage.querySelector('.popup-image__photo').src = event.target.closest('.cards__photo').src;
+    popupImage.querySelector('.popup-image__photo').alt = event.target.closest('.cards__photo').alt;
+    popupImage.querySelector('.popup-image__title').textContent = event.target.closest('.cards__photo').alt;
+    popupImage.classList.toggle('popup_open');
+  });
 
     cards.prepend(newItem);
   }
 
-for (let i = 0; i < initialCards.length; i++) {
-  let card = initialCards[i];
+initialCards.forEach(card => {
   addItemtoContainer(card.name, card.link);
-}
+});
 
   popupNewItem.addEventListener('submit', event => {
     event.preventDefault();
@@ -108,5 +115,8 @@ for (let i = 0; i < initialCards.length; i++) {
 
 popupNewItemOpenButton.addEventListener('click', popupToggleNewItem);
 popupNewItemClose.addEventListener ('click', popupToggleNewItem);
+popupImageClose.addEventListener('click', event => popupImage.classList.toggle('popup_open'));
+
+
 
 
