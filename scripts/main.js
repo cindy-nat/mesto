@@ -30,26 +30,27 @@ const popupOpenButton = document.querySelector('.profile__button-edit');
 const popupCloseButton = popupEdit.querySelector('.popup__close');
 const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
-let name = document.querySelector('.profile__name');
+const name = document.querySelector('.profile__name');
 const description = document.querySelector('.profile__description');
 
-//работа с формой редактирования профайла
-function popupToogle () {
-  popupEdit.classList.toggle('popup_open');
-  nameInput.value = name.textContent;
-  jobInput.value = description.textContent;
-}
+//открытие окна для всех функций
+const toggleModalWindow = (modalWindow) => {modalWindow.classList.toggle('popup_open');
+};
 
+//работа с формой редактирования профайла
 function formSubmitHandler (evt) {
     evt.preventDefault();
 
     name.textContent = nameInput.value;
     description.textContent = jobInput.value;
-    popupToogle();
+    toggleModalWindow(popupEdit);
 }
 
-popupOpenButton.addEventListener ('click', popupToogle);
-popupCloseButton.addEventListener ('click', popupToogle);
+popupOpenButton.addEventListener ('click', ()=> {
+  toggleModalWindow(popupEdit);
+  nameInput.value = name.textContent;
+  jobInput.value = description.textContent;});
+popupCloseButton.addEventListener ('click', ()=> {toggleModalWindow(popupEdit);});
 popupEdit.addEventListener('submit', formSubmitHandler);
 
 //работа с формой добавления новых катинок
@@ -64,12 +65,20 @@ const popupNewItemClose = popupNewItem.querySelector('.popup__close');
 const popupImage = document.querySelector('.popup-image');
 const popupImageClose = popupImage.querySelector('.popup__close');
 
+  function handleLikeIcon(event) {
+    event.target.classList.toggle('cards__like_clicked');
+  }
 
+  function handleDeleteCard(event) {
+    const card = event.target.closest('.cards__item');
+    card.remove();}
 
-  function popupToggleNewItem() {
-    popupNewItem.classList.toggle('popup_open');
-    popupNewItemName.value='';
-    popupNewItemLink.value='';
+  function handlePreviewPicture(event) {
+    const popupImagePhoto = popupImage.querySelector('.popup-image__photo');
+    popupImagePhoto.src = event.target.closest('.cards__photo').src;
+    popupImagePhoto.alt = event.target.closest('.cards__photo').alt;
+    popupImage.querySelector('.popup-image__title').textContent = event.target.closest('.cards__photo').alt;
+    toggleModalWindow(popupImage);
   }
 
   function addItemtoContainer (name, link) {
@@ -79,21 +88,11 @@ const popupImageClose = popupImage.querySelector('.popup__close');
     newItemPhoto.alt = name;
     newItem.querySelector('.cards__name').textContent = name;
 
-    newItem.querySelector('.button__delete').addEventListener('click', event => {
-    const card = event.target.closest('.cards__item');
-    card.remove();
-    });
+    newItem.querySelector('.button__delete').addEventListener('click', handleDeleteCard);
 
-    newItem.querySelector('.cards__like').addEventListener('click',event =>{
-      event.target.classList.toggle('cards__like_clicked');
-    });
+    newItem.querySelector('.cards__like').addEventListener('click',handleLikeIcon);
 
-  newItem.querySelector('.cards__photo').addEventListener('click', event => {
-    popupImage.querySelector('.popup-image__photo').src = event.target.closest('.cards__photo').src;
-    popupImage.querySelector('.popup-image__photo').alt = event.target.closest('.cards__photo').alt;
-    popupImage.querySelector('.popup-image__title').textContent = event.target.closest('.cards__photo').alt;
-    popupImage.classList.toggle('popup_open');
-  });
+    newItem.querySelector('.cards__photo').addEventListener('click', handlePreviewPicture);
 
     cards.prepend(newItem);
   }
@@ -108,12 +107,15 @@ initialCards.forEach(card => {
     const newItemLink = popupNewItemLink.value;
     if(newName!=='' && newItemLink!=='') {
       addItemtoContainer(newName, newItemLink);
-      popupToggleNewItem();
+      toggleModalWindow(popupNewItem);
     }
   })
 
-popupNewItemOpenButton.addEventListener('click', popupToggleNewItem);
-popupNewItemClose.addEventListener ('click', popupToggleNewItem);
+popupNewItemOpenButton.addEventListener('click', () => {
+  toggleModalWindow(popupNewItem);
+  popupNewItemName.value='';
+  popupNewItemLink.value='';});
+popupNewItemClose.addEventListener ('click', () => {toggleModalWindow(popupNewItem);});
 popupImageClose.addEventListener('click', () => popupImage.classList.toggle('popup_open'));
 
 
