@@ -30,8 +30,8 @@ const popupOpenButton = document.querySelector('.profile__button-edit');
 const popupCloseButton = popupEdit.querySelector('.popup__close');
 const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
-const name = document.querySelector('.profile__name');
-const description = document.querySelector('.profile__description');
+const profileName = document.querySelector('.profile__name');
+const profileDescription = document.querySelector('.profile__description');
 
 //открытие окна для всех функций
 const toggleModalWindow = (modalWindow) => {modalWindow.classList.toggle('popup_open');
@@ -41,15 +41,15 @@ const toggleModalWindow = (modalWindow) => {modalWindow.classList.toggle('popup_
 function formSubmitHandler (evt) {
     evt.preventDefault();
 
-    name.textContent = nameInput.value;
-    description.textContent = jobInput.value;
+    profileName.textContent = nameInput.value;
+    profileDescription.textContent = jobInput.value;
     toggleModalWindow(popupEdit);
 }
 
 popupOpenButton.addEventListener ('click', ()=> {
   toggleModalWindow(popupEdit);
-  nameInput.value = name.textContent;
-  jobInput.value = description.textContent;});
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileDescription.textContent;});
 popupCloseButton.addEventListener ('click', ()=> {toggleModalWindow(popupEdit);});
 popupEdit.addEventListener('submit', formSubmitHandler);
 
