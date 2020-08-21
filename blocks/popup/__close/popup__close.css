@@ -10,11 +10,13 @@
   background-repeat: no-repeat;
   border: none;
   background-color: transparent;
+  outline: none;
 }
 
 .popup__close:hover {
   cursor: pointer;
   opacity: 0.6;
+  outline: none;
 }
 
 @media screen and (max-width: 470px){
