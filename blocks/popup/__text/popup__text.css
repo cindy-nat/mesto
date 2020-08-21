@@ -9,7 +9,7 @@
   font-size: 14px;
   line-height: 17px;
   color: black;
-  padding-bottom: 13px;
+  padding: 0 0 13px;
 }
 
 .popup__text:focus {

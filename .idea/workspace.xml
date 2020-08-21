@@ -33,7 +33,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup/__close/popup__close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__close/popup__close.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__text/popup__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__text/popup__text.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,7 @@
       <workItem from="1597903345919" duration="4039000" />
       <workItem from="1597921090355" duration="2080000" />
       <workItem from="1597952653533" duration="75000" />
-      <workItem from="1598007182496" duration="3829000" />
+      <workItem from="1598007182496" duration="4406000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
@@ -134,5 +134,11 @@
     <MESSAGE value="delete card" />
     <MESSAGE value="like button" />
     <option name="LAST_COMMIT_MESSAGE" value="like button" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="478" y="16" width="579" height="801" key="find.popup" timestamp="1598011594481">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1598011594481" />
   </component>
 </project>
