@@ -43,6 +43,10 @@ function closePopup (popup, event) {
   toggleModalWindow (popup);
 }
 
+function closePopupEsc (popup, event) {
+  if(event.key==="Escape" && popup.classList.contains('popup_open')) toggleModalWindow (popup);
+}
+
 //работа с формой редактирования профайла
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -58,9 +62,9 @@ popupOpenButton.addEventListener ('click', ()=> {
   jobInput.value = profileDescription.textContent;});
 popupCloseButton.addEventListener ('click', ()=> {toggleModalWindow(popupEdit);});
 popupEdit.addEventListener('submit', formSubmitHandler);
-popupEdit.addEventListener('click', (evt) =>{
-  closePopup(popupEdit,evt);
-});
+popupEdit.addEventListener('click', (evt) =>{closePopup(popupEdit,evt);});
+document.addEventListener('keydown', (evt) =>{closePopupEsc(popupEdit,evt);});
+
 
 //работа с формой добавления новых катинок
 
@@ -126,10 +130,14 @@ popupNewItemOpenButton.addEventListener('click', () => {
   popupNewItemLink.value='';});
 popupNewItemClose.addEventListener ('click', () => {toggleModalWindow(popupNewItem);});
 popupNewItem.addEventListener('click', (evt) =>{closePopup(popupNewItem,evt);});
+document.addEventListener('keydown', (evt) =>{closePopupEsc(popupNewItem,evt);});
+
 
 //Кнопка закрытия изображения
 popupImageClose.addEventListener('click', () => popupImage.classList.toggle('popup_open'));
 popupImage.addEventListener('click', (evt) =>{closePopup(popupImage,evt);});
+document.addEventListener('keydown', (evt) =>{closePopupEsc(popupImage,evt);});
+
 
 
 
