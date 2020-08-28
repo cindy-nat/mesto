@@ -37,6 +37,12 @@ const profileDescription = document.querySelector('.profile__description');
 const toggleModalWindow = (modalWindow) => {modalWindow.classList.toggle('popup_open');
 };
 
+//закрытие попапа при нажатии вне экрана
+function closePopup (popup, event) {
+  if(event.target !== event.currentTarget) return;
+  toggleModalWindow (popup);
+}
+
 //работа с формой редактирования профайла
 function formSubmitHandler (evt) {
     evt.preventDefault();
@@ -52,6 +58,9 @@ popupOpenButton.addEventListener ('click', ()=> {
   jobInput.value = profileDescription.textContent;});
 popupCloseButton.addEventListener ('click', ()=> {toggleModalWindow(popupEdit);});
 popupEdit.addEventListener('submit', formSubmitHandler);
+popupEdit.addEventListener('click', (evt) =>{
+  closePopup(popupEdit,evt);
+});
 
 //работа с формой добавления новых катинок
 
@@ -116,7 +125,11 @@ popupNewItemOpenButton.addEventListener('click', () => {
   popupNewItemName.value='';
   popupNewItemLink.value='';});
 popupNewItemClose.addEventListener ('click', () => {toggleModalWindow(popupNewItem);});
+popupNewItem.addEventListener('click', (evt) =>{closePopup(popupNewItem,evt);});
+
+//Кнопка закрытия изображения
 popupImageClose.addEventListener('click', () => popupImage.classList.toggle('popup_open'));
+popupImage.addEventListener('click', (evt) =>{closePopup(popupImage,evt);});
 
 
 
