@@ -1,6 +1,6 @@
 .popup__text {
-  width: 83%;
-  margin: 0 auto 30px;
+  margin-bottom: 13px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-family: inherit;
