@@ -20,16 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__error/_visible/popup__error_visible.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__error/popup__error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__input-container/popup__input-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__submit/_disabled/popup__submit_disabled.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/__text/_type/popup__text_type_error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__input-container/popup__input-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__input-container/popup__input-container.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blocks/popup/__text/popup__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__text/popup__text.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__title/popup__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__title/popup__title.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +40,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gIwuhrJJQFsZGTj9r0Yc9jiVcM" />
@@ -86,7 +86,7 @@
       <workItem from="1598555622184" duration="88000" />
       <workItem from="1598642788503" duration="683000" />
       <workItem from="1598643503959" duration="5512000" />
-      <workItem from="1598697165860" duration="7090000" />
+      <workItem from="1598697165860" duration="8119000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
