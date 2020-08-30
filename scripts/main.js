@@ -33,18 +33,21 @@ const jobInput =  popupEdit.querySelector('.popup__text_type_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
-//открытие окна для всех функций
-const toggleModalWindow = (modalWindow) => {modalWindow.classList.toggle('popup_open');
+// открытие окна для всех функций
+const toggleModalWindowOpen = (modalWindow) => {modalWindow.classList.add('popup_open');
+};
+// закрытие окна для всех функций
+const toggleModalWindowClose = (modalWindow) => {modalWindow.classList.remove('popup_open');
 };
 
 //закрытие попапа при нажатии вне экрана
 function closePopup (popup, event) {
   if(event.target !== event.currentTarget) return;
-  toggleModalWindow (popup);
+  toggleModalWindowClose (popup);
 }
 
 function closePopupEsc (popup, event) {
-  if(event.key==="Escape" && popup.classList.contains('popup_open')) toggleModalWindow (popup);
+  if(event.key==="Escape" && popup.classList.contains('popup_open')) toggleModalWindowClose (popup);
 }
 
 //работа с формой редактирования профайла
@@ -53,17 +56,17 @@ function formSubmitHandler (evt) {
 
     profileName.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
-    toggleModalWindow(popupEdit);
+    toggleModalWindowClose(popupEdit);
 }
 
 popupOpenButton.addEventListener ('click', ()=> {
-  toggleModalWindow(popupEdit);
+  toggleModalWindowOpen(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;});
-popupCloseButton.addEventListener ('click', ()=> {toggleModalWindow(popupEdit);});
-popupEdit.addEventListener('submit', formSubmitHandler);
-popupEdit.addEventListener('click', (evt) =>{closePopup(popupEdit,evt);});
-document.addEventListener('keydown', (evt) =>{closePopupEsc(popupEdit,evt);});
+  popupCloseButton.addEventListener ('click', ()=> {toggleModalWindowClose(popupEdit);});
+  popupEdit.addEventListener('submit', formSubmitHandler);
+  popupEdit.addEventListener('click', (evt) =>{closePopup(popupEdit,evt);});
+  document.addEventListener('keydown', (evt) =>{closePopupEsc(popupEdit,evt);});
 
 
 //работа с формой добавления новых катинок
@@ -91,7 +94,7 @@ const popupImageClose = popupImage.querySelector('.popup__close');
     popupImagePhoto.src = event.target.closest('.cards__photo').src;
     popupImagePhoto.alt = event.target.closest('.cards__photo').alt;
     popupImage.querySelector('.popup-image__title').textContent = event.target.closest('.cards__photo').alt;
-    toggleModalWindow(popupImage);
+    toggleModalWindowOpen(popupImage);
   }
 
   function addItemtoContainer (name, link) {
@@ -120,15 +123,15 @@ initialCards.forEach(card => {
     const newItemLink = popupNewItemLink.value;
     if(newName!=='' && newItemLink!=='') {
       addItemtoContainer(newName, newItemLink);
-      toggleModalWindow(popupNewItem);
+      toggleModalWindowClose(popupNewItem);
     }
   })
 
 popupNewItemOpenButton.addEventListener('click', () => {
-  toggleModalWindow(popupNewItem);
+  toggleModalWindowOpen(popupNewItem);
   popupNewItemName.value='';
   popupNewItemLink.value='';});
-popupNewItemClose.addEventListener ('click', () => {toggleModalWindow(popupNewItem);});
+popupNewItemClose.addEventListener ('click', () => {toggleModalWindowClose(popupNewItem);});
 popupNewItem.addEventListener('click', (evt) =>{closePopup(popupNewItem,evt);});
 document.addEventListener('keydown', (evt) =>{closePopupEsc(popupNewItem,evt);});
 
@@ -137,8 +140,3 @@ document.addEventListener('keydown', (evt) =>{closePopupEsc(popupNewItem,evt);})
 popupImageClose.addEventListener('click', () => popupImage.classList.toggle('popup_open'));
 popupImage.addEventListener('click', (evt) =>{closePopup(popupImage,evt);});
 document.addEventListener('keydown', (evt) =>{closePopupEsc(popupImage,evt);});
-
-
-
-
-
