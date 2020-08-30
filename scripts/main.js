@@ -135,7 +135,7 @@ document.addEventListener('keyup', (evt) => {closePopupEsc(popupNewItem,evt);});
 
 //Кнопка закрытия изображения
 popupImage.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
+  if (evt.target.classList.contains('popup-imagegit ') || evt.target.classList.contains('popup__close')) {
     closeModalWindow(popupImage);
   }
 });

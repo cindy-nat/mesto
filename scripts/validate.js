@@ -60,14 +60,15 @@ const setEventListeners = (formElement,formObj) => {
   });
 }
 
-
 //Устанавливаем валидацию на все формы
 const enableValidation = (formObj) => {
   const formList = Array.from(document.querySelectorAll(formObj.formSelector));
 
   formList.forEach(formElement => {
   formElement.addEventListener('submit', (evt) => evt.preventDefault());
-  setEventListeners(formElement,formObj);})
+  setEventListeners(formElement,formObj);
+});
+
 }
 
 
