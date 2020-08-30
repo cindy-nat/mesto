@@ -27,27 +27,20 @@ const initialCards = [
 
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupOpenButton = document.querySelector('.profile__button-edit');
-const popupCloseButton = popupEdit.querySelector('.popup__close');
 const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 
 // открытие окна для всех функций
-const toggleModalWindowOpen = (modalWindow) => {modalWindow.classList.add('popup_open');
+const openModalWindow = (modalWindow) => {modalWindow.classList.add('popup_open');
 };
 // закрытие окна для всех функций
-const toggleModalWindowClose = (modalWindow) => {modalWindow.classList.remove('popup_open');
+const closeModalWindow = (modalWindow) => {modalWindow.classList.remove('popup_open');
 };
 
-//закрытие попапа при нажатии вне экрана
-function closePopup (popup, event) {
-  if(event.target !== event.currentTarget) return;
-  toggleModalWindowClose (popup);
-}
-
 function closePopupEsc (popup, event) {
-  if(event.key==="Escape" && popup.classList.contains('popup_open')) toggleModalWindowClose (popup);
+  if(event.key === "Escape" && popup.classList.contains('popup_open')) closeModalWindow (popup);
 }
 
 //работа с формой редактирования профайла
@@ -56,17 +49,20 @@ function formSubmitHandler (evt) {
 
     profileName.textContent = nameInput.value;
     profileDescription.textContent = jobInput.value;
-    toggleModalWindowClose(popupEdit);
+    closeModalWindow(popupEdit);
 }
 
 popupOpenButton.addEventListener ('click', ()=> {
-  toggleModalWindowOpen(popupEdit);
+  openModalWindow(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;});
-  popupCloseButton.addEventListener ('click', ()=> {toggleModalWindowClose(popupEdit);});
+popupEdit.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
+    closeModalWindow(popupEdit);
+  }
+});
   popupEdit.addEventListener('submit', formSubmitHandler);
-  popupEdit.addEventListener('click', (evt) =>{closePopup(popupEdit,evt);});
-  document.addEventListener('keydown', (evt) =>{closePopupEsc(popupEdit,evt);});
+  document.addEventListener('keyup', (evt) =>{closePopupEsc(popupEdit,evt);});
 
 
 //работа с формой добавления новых катинок
@@ -77,9 +73,7 @@ const cards = document.querySelector('.cards');
 const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
-const popupNewItemClose = popupNewItem.querySelector('.popup__close');
 const popupImage = document.querySelector('.popup-image');
-const popupImageClose = popupImage.querySelector('.popup__close');
 
   function handleLikeIcon(event) {
     event.target.classList.toggle('cards__like_clicked');
@@ -94,7 +88,7 @@ const popupImageClose = popupImage.querySelector('.popup__close');
     popupImagePhoto.src = event.target.closest('.cards__photo').src;
     popupImagePhoto.alt = event.target.closest('.cards__photo').alt;
     popupImage.querySelector('.popup-image__title').textContent = event.target.closest('.cards__photo').alt;
-    toggleModalWindowOpen(popupImage);
+    openModalWindow(popupImage);
   }
 
   function addItemtoContainer (name, link) {
@@ -121,22 +115,28 @@ initialCards.forEach(card => {
     event.preventDefault();
     const newName = popupNewItemName.value;
     const newItemLink = popupNewItemLink.value;
-    if(newName!=='' && newItemLink!=='') {
+    if(newName !=='' && newItemLink !=='') {
       addItemtoContainer(newName, newItemLink);
-      toggleModalWindowClose(popupNewItem);
+      closeModalWindow(popupNewItem);
     }
-  })
+  });
 
 popupNewItemOpenButton.addEventListener('click', () => {
-  toggleModalWindowOpen(popupNewItem);
+  openModalWindow(popupNewItem);
   popupNewItemName.value='';
   popupNewItemLink.value='';});
-popupNewItemClose.addEventListener ('click', () => {toggleModalWindowClose(popupNewItem);});
-popupNewItem.addEventListener('click', (evt) =>{closePopup(popupNewItem,evt);});
-document.addEventListener('keydown', (evt) =>{closePopupEsc(popupNewItem,evt);});
+popupNewItem.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
+    closeModalWindow(popupNewItem);
+  }
+});
+document.addEventListener('keyup', (evt) => {closePopupEsc(popupNewItem,evt);});
 
 
 //Кнопка закрытия изображения
-popupImageClose.addEventListener('click', () => popupImage.classList.toggle('popup_open'));
-popupImage.addEventListener('click', (evt) =>{closePopup(popupImage,evt);});
-document.addEventListener('keydown', (evt) =>{closePopupEsc(popupImage,evt);});
+popupImage.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
+    closeModalWindow(popupImage);
+  }
+});
+document.addEventListener('keyup', (evt) => {closePopupEsc(popupImage,evt);});
