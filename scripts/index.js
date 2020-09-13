@@ -1,4 +1,5 @@
 import {Card} from "./Card.js";
+import {FormValidator} from "./FormValidator.js";
 
 const initialCards = [
   {
@@ -38,6 +39,17 @@ function closePopupEsc (popup, event) {
   if(event.key === "Escape" && popup.classList.contains('popup_open')) closeModalWindow (popup);
 }
 
+//очищение формы от ошибок
+function hideInputError (formElement) {
+  const formInputs = formElement.querySelectorAll('.popup__text');
+  formInputs.forEach(inputElement => {
+    inputElement.classList.remove('popup__text_type_error');
+    const formError =  formElement.querySelector(`#${inputElement.id}-error`);
+    formError.classList.remove('popup__error_visible');
+    formError.textContent = '';
+  })
+}
+
 //работа с формой редактирования
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupOpenButton = document.querySelector('.profile__button-edit');
@@ -57,7 +69,9 @@ function formSubmitHandler (evt) {
 popupOpenButton.addEventListener ('click', ()=> {
   openModalWindow(popupEdit);
   nameInput.value = profileName.textContent;
-  jobInput.value = profileDescription.textContent;});
+  jobInput.value = profileDescription.textContent;
+  hideInputError (popupEdit);
+});
   popupEdit.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
     closeModalWindow(popupEdit);
@@ -96,7 +110,8 @@ popupNewItem.addEventListener('submit', event => {
 popupNewItemOpenButton.addEventListener('click', () => {
 openModalWindow(popupNewItem);
 popupNewItemName.value='';
-popupNewItemLink.value='';});
+popupNewItemLink.value='';
+  hideInputError(popupNewItem)});
 popupNewItem.addEventListener('click', (evt) => {
 if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
   closeModalWindow(popupNewItem);
@@ -112,3 +127,15 @@ if (evt.target.classList.contains('popup-image') || evt.target.classList.contain
 }
 });
 document.addEventListener('keyup', (evt) => {closePopupEsc(popupImage,evt);});
+
+//Запуск валидации для форм
+
+  const formValidator = new FormValidator({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__text',
+    submitButtonSelector: '.popup__submit',
+    inactiveButtonClass: 'popup__submit_disabled',
+    inputErrorClass: 'popup__text_type_error',
+    errorClass: 'popup__error_visible'
+  }, '.popup__form');
+  formValidator.enableValidation();
