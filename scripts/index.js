@@ -30,13 +30,13 @@ const initialCards = [
 
 //общие обработчики
 // открытие окна для всех функций
-const openModalWindow = (modalWindow) => {modalWindow.classList.add('popup_open');
+const openModalWindow = (modalWindow) => {modalWindow.classList.add('popup_opened');
 };
 // закрытие окна для всех функций
-const closeModalWindow = (modalWindow) => {modalWindow.classList.remove('popup_open');
+const closeModalWindow = (modalWindow) => {modalWindow.classList.remove('popup_opened');
 };
 function closePopupEsc (popup, event) {
-  if(event.key === "Escape" && popup.classList.contains('popup_open')) closeModalWindow (popup);
+  if(event.key === "Escape" && popup.classList.contains('popup_opened')) closeModalWindow (popup);
 }
 
 //очищение формы от ошибок

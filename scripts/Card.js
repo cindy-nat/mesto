@@ -32,7 +32,7 @@ export class Card {
     popupImagePhoto.src = image.src;
     popupImagePhoto.alt = image.alt;
     popupImage.querySelector('.popup-image__title').textContent = image.alt;
-    popupImage.classList.add('popup_open');
+    popupImage.classList.add('popup_opened');
   }
 
 
