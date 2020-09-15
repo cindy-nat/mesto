@@ -2,6 +2,7 @@ export class FormValidator {
   constructor (object, formSelector) {
     this._formObj = object;
     this._formSelector = formSelector;
+    this._buttonElement = formSelector.querySelector(object.submitButtonSelector);
   }
 
   resetForm () {
@@ -9,9 +10,8 @@ export class FormValidator {
     formInputs.forEach(inputElement => {
       this._hideInputError(inputElement);
     });
-    const buttonElement = this._formSelector.querySelector(this._formObj.submitButtonSelector);
-    buttonElement.classList.add(this._formObj.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', '');
+    this._buttonElement.classList.add(this._formObj.inactiveButtonClass);
+    this._buttonElement.setAttribute('disabled', '');
   }
 
 // Функция, которая добавляет класс с ошибкой
@@ -48,15 +48,15 @@ export class FormValidator {
   };
 
 //Работа переключения работы кнопки submit
-  _toggleButtonState (inputList, buttonElement) {
+  _toggleButtonState (inputList) {
     if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add(this._formObj.inactiveButtonClass);
-      buttonElement.setAttribute('disabled', '')
+      this._buttonElement.classList.add(this._formObj.inactiveButtonClass);
+      this._buttonElement.setAttribute('disabled', '')
     }
     else {
       // иначе сделай кнопку активной
-      buttonElement.classList.remove(this._formObj.inactiveButtonClass);
-      buttonElement.removeAttribute('disabled', '')
+      this._buttonElement.classList.remove(this._formObj.inactiveButtonClass);
+      this._buttonElement.removeAttribute('disabled', '')
     }
   };
 
@@ -65,13 +65,12 @@ export class FormValidator {
 //устаналвиваем валидацию на каждое поле ввода для каждой формы
   _setEventListeners () {
     const inputList = Array.from(this._formSelector.querySelectorAll(this._formObj.inputSelector));
-    const buttonElement = this._formSelector.querySelector(this._formObj.submitButtonSelector);
-    this._toggleButtonState(inputList, buttonElement);
+    this._toggleButtonState(inputList);
     //Делаем контроль ввода для каждой формы ввода
     inputList.forEach(inputElement => {
       inputElement.addEventListener('input', ()=> {
         this._checkInputValidity(inputElement);
-        this._toggleButtonState(inputList, buttonElement);});
+        this._toggleButtonState(inputList);});
     });
   }
 
