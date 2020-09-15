@@ -51,20 +51,26 @@ const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
 
-initialCards.forEach(item => {
-  const card = new Card(item.link, item.name, '.new-item');
+//создание новых карточек
+
+const cardCreation = (cardLink, cardName) => {
+  const card = new Card(cardLink, cardName, '.new-item');
   const cardElement = card.generateCard();
   cards.prepend(cardElement);
+}
+
+//добавление существующих карточек
+initialCards.forEach(item => {
+  cardCreation(item.link, item.name);
 });
 
+//создание новой при сабмите
 popupNewItem.addEventListener('submit', event => {
   event.preventDefault();
   const newName = popupNewItemName.value;
   const newItemLink = popupNewItemLink.value;
   if(newName !=='' && newItemLink !=='') {
-    const card = new Card(newItemLink, newName, '.new-item');
-    const cardElement = card.generateCard();
-    cards.prepend(cardElement);
+    cardCreation(newItemLink, newName);
     closeModalWindow(popupNewItem);
   }
 });
