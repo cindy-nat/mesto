@@ -3,21 +3,6 @@ import {FormValidator} from "./FormValidator.js";
 import {initialCards, popupImage} from "./constants.js";
 import {openModalWindow, closeModalWindow} from "./utils.js";
 
-//создание класса для валидации
-const formValidator = (formElement) => {
-  const formValidatorElement = new FormValidator({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__text',
-    submitButtonSelector: '.popup__submit',
-    inactiveButtonClass: 'popup__submit_disabled',
-    inputErrorClass: 'popup__text_type_error',
-    errorClass: 'popup__error_visible'
-  }, formElement);
-  formValidatorElement.resetForm();
-  formValidatorElement.enableValidation();
-}
-
-
 //работа с формой редактирования
 const popupEdit = document.querySelector('.popup_type_edit');
 const popupOpenButton = document.querySelector('.profile__button-edit');
@@ -25,6 +10,17 @@ const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
+
+//создание класса валидации для формы редактирования профиля
+const profileFormValidator = new FormValidator({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__text',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_disabled',
+  inputErrorClass: 'popup__text_type_error',
+  errorClass: 'popup__error_visible'
+}, popupEdit);
+profileFormValidator.enableValidation();
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
@@ -38,7 +34,7 @@ popupOpenButton.addEventListener ('click', ()=> {
   openModalWindow(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
-  formValidator(popupEdit);
+  profileFormValidator.resetForm();//сброс валидации формы
 });
   popupEdit.addEventListener('mousedown', (evt) => {
   if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
@@ -53,6 +49,16 @@ const popupNewItemOpenButton = document.querySelector('.profile__button-add');
 const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
+
+const addCardFormValidator = new FormValidator({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__text',
+  submitButtonSelector: '.popup__submit',
+  inactiveButtonClass: 'popup__submit_disabled',
+  inputErrorClass: 'popup__text_type_error',
+  errorClass: 'popup__error_visible'
+}, popupNewItem);
+  addCardFormValidator.enableValidation();
 
 //создание новых карточек
 const createCard = (cardLink, cardName) => {
@@ -78,10 +84,11 @@ popupNewItem.addEventListener('submit', event => {
 });
 
 popupNewItemOpenButton.addEventListener('click', () => {
-openModalWindow(popupNewItem);
-popupNewItemName.value='';
-popupNewItemLink.value='';
-  formValidator(popupNewItem);});
+  openModalWindow(popupNewItem);
+  popupNewItemName.value='';
+  popupNewItemLink.value='';
+  addCardFormValidator.resetForm();//сброс валидации формы
+});
 
 popupNewItem.addEventListener('mousedown', (evt) => {
 if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
