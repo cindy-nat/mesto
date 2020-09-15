@@ -1,4 +1,5 @@
-import {popupImage, openModalWindow} from "./constants.js";
+import {popupImage} from "./constants.js";
+import {openModalWindow} from "./utils.js";
 
 export class Card {
   constructor(imageUrl, text, cardSelector) {

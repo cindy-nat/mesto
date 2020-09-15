@@ -1,6 +1,7 @@
 import {Card} from "./Card.js";
 import {FormValidator} from "./FormValidator.js";
-import {openModalWindow, initialCards, popupImage, closeModalWindow} from "./constants.js";
+import {initialCards, popupImage} from "./constants.js";
+import {openModalWindow, closeModalWindow} from "./utils.js";
 
 //создание класса для валидации
 const formValidator = (formElement) => {
