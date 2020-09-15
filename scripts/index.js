@@ -1,14 +1,8 @@
 import {Card} from "./Card.js";
 import {FormValidator} from "./FormValidator.js";
-import {openModalWindow, initialCards, popupImage} from "./constants.js";
+import {openModalWindow, initialCards, popupImage, closeModalWindow} from "./constants.js";
 
-//общие обработчики
-// закрытие окна для всех функций
-const closeModalWindow = (modalWindow) => {modalWindow.classList.remove('popup_opened');
-};
-function closePopupEsc (popup, event) {
-  if(event.key === "Escape" && popup.classList.contains('popup_opened')) closeModalWindow (popup);
-}
+
 
 //очищение формы от ошибок
 function hideInputError (formElement) {
@@ -49,7 +43,6 @@ popupOpenButton.addEventListener ('click', ()=> {
   }
   });
 popupEdit.addEventListener('submit', formSubmitHandler);
-document.addEventListener('keyup', (evt) =>{closePopupEsc(popupEdit,evt);});
 
 //работа с формой добавления новых катинок
 const cards = document.querySelector('.cards');
@@ -86,7 +79,6 @@ if (evt.target.classList.contains('popup') || evt.target.classList.contains('pop
   closeModalWindow(popupNewItem);
 }
 });
-document.addEventListener('keyup', (evt) => {closePopupEsc(popupNewItem,evt);});
 
 
 //Кнопка закрытия изображения
@@ -95,7 +87,6 @@ if (evt.target.classList.contains('popup-image') || evt.target.classList.contain
   closeModalWindow(popupImage);
 }
 });
-document.addEventListener('keyup', (evt) => {closePopupEsc(popupImage,evt);});
 
 //Запуск валидации для форм
 
