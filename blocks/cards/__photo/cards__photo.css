@@ -4,3 +4,7 @@
   width: 100%;
   margin: 0;
 }
+
+.cards__photo:hover {
+  opacity: .8;
+}
