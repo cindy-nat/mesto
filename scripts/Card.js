@@ -1,4 +1,4 @@
-import {popupImage} from "./constants.js";
+import {popupImage, openModalWindow} from "./constants.js";
 
 export class Card {
   constructor(imageUrl, text, cardSelector) {
@@ -33,7 +33,7 @@ export class Card {
     popupImagePhoto.src = image.src;
     popupImagePhoto.alt = image.alt;
     popupImage.querySelector('.popup-image__title').textContent = image.alt;
-    popupImage.classList.add('popup_opened');
+    openModalWindow(popupImage);
   }
 
 
@@ -43,7 +43,7 @@ export class Card {
     const newItemPhoto = this._element.querySelector('.cards__photo');
 
     newItemPhoto.src = this._imageUrl;
-    newItemPhoto.textContent = this._text;
+    newItemPhoto.alt = this._text;
     this._element.querySelector('.cards__name').textContent = this._text;
 
     return this._element;
