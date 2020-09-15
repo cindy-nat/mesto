@@ -2,18 +2,20 @@ import {Card} from "./Card.js";
 import {FormValidator} from "./FormValidator.js";
 import {openModalWindow, initialCards, popupImage, closeModalWindow} from "./constants.js";
 
-
-
-//очищение формы от ошибок
-function hideInputError (formElement) {
-  const formInputs = formElement.querySelectorAll('.popup__text');
-  formInputs.forEach(inputElement => {
-    inputElement.classList.remove('popup__text_type_error');
-    const formError =  formElement.querySelector(`#${inputElement.id}-error`);
-    formError.classList.remove('popup__error_visible');
-    formError.textContent = '';
-  })
+//создание класса для валидации
+const formValidator = (formElement) => {
+  const formValidatorElement = new FormValidator({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__text',
+    submitButtonSelector: '.popup__submit',
+    inactiveButtonClass: 'popup__submit_disabled',
+    inputErrorClass: 'popup__text_type_error',
+    errorClass: 'popup__error_visible'
+  }, formElement);
+  formValidatorElement.resetForm();
+  formValidatorElement.enableValidation();
 }
+
 
 //работа с формой редактирования
 const popupEdit = document.querySelector('.popup_type_edit');
@@ -35,7 +37,7 @@ popupOpenButton.addEventListener ('click', ()=> {
   openModalWindow(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
-  hideInputError (popupEdit);
+  formValidator(popupEdit);
 });
   popupEdit.addEventListener('mousedown', (evt) => {
   if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
@@ -52,7 +54,6 @@ const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-n
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
 
 //создание новых карточек
-
 const cardCreation = (cardLink, cardName) => {
   const card = new Card(cardLink, cardName, '.new-item');
   const cardElement = card.generateCard();
@@ -79,13 +80,13 @@ popupNewItemOpenButton.addEventListener('click', () => {
 openModalWindow(popupNewItem);
 popupNewItemName.value='';
 popupNewItemLink.value='';
-  hideInputError(popupNewItem)});
+  formValidator(popupNewItem);});
+
 popupNewItem.addEventListener('mousedown', (evt) => {
 if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
   closeModalWindow(popupNewItem);
 }
 });
-
 
 //Кнопка закрытия изображения
 popupImage.addEventListener('mousedown', (evt) => {
@@ -94,14 +95,3 @@ if (evt.target.classList.contains('popup-image') || evt.target.classList.contain
 }
 });
 
-//Запуск валидации для форм
-
-  const formValidator = new FormValidator({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__text',
-    submitButtonSelector: '.popup__submit',
-    inactiveButtonClass: 'popup__submit_disabled',
-    inputErrorClass: 'popup__text_type_error',
-    errorClass: 'popup__error_visible'
-  }, '.popup__form');
-  formValidator.enableValidation();

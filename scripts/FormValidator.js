@@ -4,16 +4,26 @@ export class FormValidator {
     this._formSelector = formSelector;
   }
 
+  resetForm () {
+    const formInputs = this._formSelector.querySelectorAll('.popup__text');
+    formInputs.forEach(inputElement => {
+      this._hideInputError(inputElement);
+    });
+    const buttonElement = this._formSelector.querySelector(this._formObj.submitButtonSelector);
+    buttonElement.classList.add(this._formObj.inactiveButtonClass);
+    buttonElement.setAttribute('disabled', '');
+  }
+
 // Функция, которая добавляет класс с ошибкой
-  _showInputError (formElement, inputElement, errorMessage) {
-    const formError =  formElement.querySelector(`#${inputElement.id}-error`);
+  _showInputError (inputElement, errorMessage) {
+    const formError =  this._formSelector.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(this._formObj.inputErrorClass);
     formError.textContent = errorMessage;
     formError.classList.add(this._formObj.errorClass);
   };
 // Функция, которая удаляет класс с ошибкой
-  _hideInputError (formElement, inputElement) {
-    const formError =  formElement.querySelector(`#${inputElement.id}-error`);
+  _hideInputError (inputElement) {
+    const formError =  this._formSelector.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._formObj.inputErrorClass);
     formError.classList.remove(this._formObj.errorClass);
     // Очистим ошибку
@@ -22,11 +32,11 @@ export class FormValidator {
 
 
 //Проверяем валидность данных в каждом элементе
-  _checkInputValidity (formElement, inputElement) {
+  _checkInputValidity (inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(formElement, inputElement, inputElement.validationMessage);
+      this._showInputError(inputElement, inputElement.validationMessage);
     } else {
-      this._hideInputError(formElement, inputElement);
+      this._hideInputError(inputElement);
     }
   }
 
@@ -53,26 +63,21 @@ export class FormValidator {
 
 
 //устаналвиваем валидацию на каждое поле ввода для каждой формы
-  _setEventListeners (formElement) {
-    const inputList = Array.from(formElement.querySelectorAll(this._formObj.inputSelector));
-    const buttonElement = formElement.querySelector(this._formObj.submitButtonSelector);
+  _setEventListeners () {
+    const inputList = Array.from(this._formSelector.querySelectorAll(this._formObj.inputSelector));
+    const buttonElement = this._formSelector.querySelector(this._formObj.submitButtonSelector);
     this._toggleButtonState(inputList, buttonElement);
     //Делаем контроль ввода для каждой формы ввода
     inputList.forEach(inputElement => {
       inputElement.addEventListener('input', ()=> {
-        this._checkInputValidity(formElement, inputElement);
+        this._checkInputValidity(inputElement);
         this._toggleButtonState(inputList, buttonElement);});
     });
   }
 
 
   enableValidation () {
-    const formList = Array.from(document.querySelectorAll(this._formSelector));
-
-    formList.forEach(formElement => {
-      formElement.addEventListener('submit', (evt) => evt.preventDefault());
-      this._setEventListeners(formElement);
-    });
+      this._setEventListeners();
 
   }
 }
