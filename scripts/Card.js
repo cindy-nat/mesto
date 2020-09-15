@@ -1,3 +1,5 @@
+import {popupImage} from "./constants.js";
+
 export class Card {
   constructor(imageUrl, text, cardSelector) {
     this._imageUrl = imageUrl;
@@ -26,7 +28,6 @@ export class Card {
   }
 
   _handlePreviewPicture() {
-    const popupImage = document.querySelector('.popup-image');
     const popupImagePhoto = popupImage.querySelector('.popup-image__photo');
     const image = this._element.querySelector('.cards__photo');
     popupImagePhoto.src = image.src;
