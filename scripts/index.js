@@ -55,7 +55,7 @@ const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-n
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
 
 //создание новых карточек
-const cardCreation = (cardLink, cardName) => {
+const createCard = (cardLink, cardName) => {
   const card = new Card(cardLink, cardName, '.new-item');
   const cardElement = card.generateCard();
   cards.prepend(cardElement);
@@ -63,7 +63,7 @@ const cardCreation = (cardLink, cardName) => {
 
 //добавление существующих карточек
 initialCards.forEach(item => {
-  cardCreation(item.link, item.name);
+  createCard(item.link, item.name);
 });
 
 //создание новой при сабмите
@@ -72,7 +72,7 @@ popupNewItem.addEventListener('submit', event => {
   const newName = popupNewItemName.value;
   const newItemLink = popupNewItemLink.value;
   if(newName !=='' && newItemLink !=='') {
-    cardCreation(newItemLink, newName);
+    createCard(newItemLink, newName);
     closeModalWindow(popupNewItem);
   }
 });
