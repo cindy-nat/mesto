@@ -37,7 +37,7 @@ popupOpenButton.addEventListener ('click', ()=> {
   jobInput.value = profileDescription.textContent;
   hideInputError (popupEdit);
 });
-  popupEdit.addEventListener('click', (evt) => {
+  popupEdit.addEventListener('mousedown', (evt) => {
   if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
     closeModalWindow(popupEdit);
   }
@@ -74,7 +74,7 @@ openModalWindow(popupNewItem);
 popupNewItemName.value='';
 popupNewItemLink.value='';
   hideInputError(popupNewItem)});
-popupNewItem.addEventListener('click', (evt) => {
+popupNewItem.addEventListener('mousedown', (evt) => {
 if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
   closeModalWindow(popupNewItem);
 }
@@ -82,7 +82,7 @@ if (evt.target.classList.contains('popup') || evt.target.classList.contains('pop
 
 
 //Кнопка закрытия изображения
-popupImage.addEventListener('click', (evt) => {
+popupImage.addEventListener('mousedown', (evt) => {
 if (evt.target.classList.contains('popup-image') || evt.target.classList.contains('popup__close')) {
   closeModalWindow(popupImage);
 }
