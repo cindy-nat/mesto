@@ -2,6 +2,7 @@ import {Card} from "./Card.js";
 import {FormValidator} from "./FormValidator.js";
 import {initialCards, popupImage} from "./constants.js";
 import {openModalWindow, closeModalWindow} from "./utils.js";
+import Section from "./Section.js";
 
 //работа с формой редактирования
 const popupEdit = document.querySelector('.popup_type_edit');
@@ -20,6 +21,7 @@ const profileFormValidator = new FormValidator({
   inputErrorClass: 'popup__text_type_error',
   errorClass: 'popup__error_visible'
 }, popupEdit);
+//нужно вынести объект в отдельную переменную, чтобы не было дубля!
 profileFormValidator.enableValidation();
 
 function formSubmitHandler (evt) {
@@ -44,7 +46,7 @@ popupOpenButton.addEventListener ('click', ()=> {
 popupEdit.addEventListener('submit', formSubmitHandler);
 
 //работа с формой добавления новых катинок
-const cards = document.querySelector('.cards');
+//const cards = document.querySelector('.cards');
 const popupNewItemOpenButton = document.querySelector('.profile__button-add');
 const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
@@ -60,28 +62,40 @@ const addCardFormValidator = new FormValidator({
 }, popupNewItem);
   addCardFormValidator.enableValidation();
 
+ //создание новых карточек
+// const createCard = (cardLink, cardName) => {
+//   const card = new Card(cardLink, cardName, '.new-item');
+//   const cardElement = card.generateCard();
+//   cards.prepend(cardElement);
+// }
+//
+// //добавление существующих карточек
+// initialCards.forEach(item => {
+//   createCard(item.link, item.name);
+// });
 //создание новых карточек
-const createCard = (cardLink, cardName) => {
-  const card = new Card(cardLink, cardName, '.new-item');
-  const cardElement = card.generateCard();
-  cards.prepend(cardElement);
-}
-
-//добавление существующих карточек
-initialCards.forEach(item => {
-  createCard(item.link, item.name);
-});
+const cardsList = new Section({
+    items: initialCards,
+    renderer: (item) => {
+      const card = new Card(item, '.new-item');
+      const cardElement = card.generateCard();
+      cardsList.addItem(cardElement);
+    },
+  },
+  '.cards'
+);
+cardsList.renderItems();
 
 //создание новой при сабмите
-popupNewItem.addEventListener('submit', event => {
-  event.preventDefault();
-  const newName = popupNewItemName.value;
-  const newItemLink = popupNewItemLink.value;
-  if(newName !=='' && newItemLink !=='') {
-    createCard(newItemLink, newName);
-    closeModalWindow(popupNewItem);
-  }
-});
+// popupNewItem.addEventListener('submit', event => {
+//   event.preventDefault();
+//   const newName = popupNewItemName.value;
+//   const newItemLink = popupNewItemLink.value;
+//   if(newName !=='' && newItemLink !=='') {
+//     createCard(newItemLink, newName);
+//     closeModalWindow(popupNewItem);
+//   }
+// });
 
 popupNewItemOpenButton.addEventListener('click', () => {
   openModalWindow(popupNewItem);

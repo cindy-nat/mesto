@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/Section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/cards/__photo/cards__photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/cards/__photo/cards__photo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,17 @@
       <workItem from="1600167212968" duration="9153000" />
       <workItem from="1600194637876" duration="2499000" />
       <workItem from="1600197523168" duration="262000" />
-      <workItem from="1600203844766" duration="353000" />
+      <workItem from="1600203844766" duration="707000" />
+      <workItem from="1600254758815" duration="1509000" />
+      <workItem from="1600584461729" duration="1080000" />
+      <workItem from="1600605519754" duration="657000" />
+      <workItem from="1600720218003" duration="794000" />
+      <workItem from="1600722220799" duration="24000" />
+      <workItem from="1600798277380" duration="689000" />
+      <workItem from="1600800730680" duration="278000" />
+      <workItem from="1600802128762" duration="51000" />
+      <workItem from="1600802242325" duration="45000" />
+      <workItem from="1601146365304" duration="433000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
@@ -190,10 +202,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1598555676721">
+    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1600802275436">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1598555676721" />
+    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600802275436" />
     <state width="1515" height="214" key="GridCell.Tab.0.bottom" timestamp="1599854527560">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

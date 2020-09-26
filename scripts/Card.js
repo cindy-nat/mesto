@@ -2,9 +2,9 @@ import {popupImage} from "./constants.js";
 import {openModalWindow} from "./utils.js";
 
 export class Card {
-  constructor(imageUrl, text, cardSelector) {
-    this._imageUrl = imageUrl;
-    this._text = text;
+  constructor(data, cardSelector) {
+    this._imageUrl = data.link;
+    this._text = data.name;
     this._cardSelector = cardSelector;
   }
 
