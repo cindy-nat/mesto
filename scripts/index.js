@@ -46,7 +46,7 @@ popupOpenButton.addEventListener ('click', ()=> {
 popupEdit.addEventListener('submit', formSubmitHandler);
 
 //работа с формой добавления новых катинок
-//const cards = document.querySelector('.cards');
+const cardsContainer = document.querySelector('.cards');
 const popupNewItemOpenButton = document.querySelector('.profile__button-add');
 const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
@@ -63,39 +63,36 @@ const addCardFormValidator = new FormValidator({
   addCardFormValidator.enableValidation();
 
  //создание новых карточек
-// const createCard = (cardLink, cardName) => {
-//   const card = new Card(cardLink, cardName, '.new-item');
-//   const cardElement = card.generateCard();
-//   cards.prepend(cardElement);
-// }
-//
-// //добавление существующих карточек
-// initialCards.forEach(item => {
-//   createCard(item.link, item.name);
-// });
-//создание новых карточек
+const createCard = (item, renderList) => {
+  const card = new Card(item, '.new-item');
+  const cardElement = card.generateCard();
+  renderList.addItem(cardElement);
+}
+
+//добавление карточек из массива
 const cardsList = new Section({
     items: initialCards,
     renderer: (item) => {
-      const card = new Card(item, '.new-item');
-      const cardElement = card.generateCard();
-      cardsList.addItem(cardElement);
+      createCard(item, cardsList);
     },
   },
-  '.cards'
+  cardsContainer
 );
 cardsList.renderItems();
 
 //создание новой при сабмите
-// popupNewItem.addEventListener('submit', event => {
-//   event.preventDefault();
-//   const newName = popupNewItemName.value;
-//   const newItemLink = popupNewItemLink.value;
-//   if(newName !=='' && newItemLink !=='') {
-//     createCard(newItemLink, newName);
-//     closeModalWindow(popupNewItem);
-//   }
-// });
+popupNewItem.addEventListener('submit', event => {
+  event.preventDefault();
+  const name = popupNewItemName.value;
+  const link = popupNewItemLink.value;
+    if(name !=='' && link !=='') {
+      const item ={name,link};
+      const cardRenderer = new Section({
+        items: []}, cardsContainer);
+      createCard(item,cardRenderer)
+      closeModalWindow(popupNewItem);
+  }
+});
 
 popupNewItemOpenButton.addEventListener('click', () => {
   openModalWindow(popupNewItem);
