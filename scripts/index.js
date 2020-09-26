@@ -3,6 +3,7 @@ import {FormValidator} from "./FormValidator.js";
 import {initialCards, popupImage} from "./constants.js";
 import {openModalWindow, closeModalWindow} from "./utils.js";
 import Section from "./Section.js";
+import PopupWithForm from "./PopupWithForm.js";
 
 //работа с формой редактирования
 const popupEdit = document.querySelector('.popup_type_edit');
@@ -11,39 +12,30 @@ const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
-
-//создание класса валидации для формы редактирования профиля
-const profileFormValidator = new FormValidator({
-  formSelector: '.popup__form',
+const profileValidationClasses = {formSelector: '.popup__form',
   inputSelector: '.popup__text',
   submitButtonSelector: '.popup__submit',
   inactiveButtonClass: 'popup__submit_disabled',
   inputErrorClass: 'popup__text_type_error',
-  errorClass: 'popup__error_visible'
-}, popupEdit);
-//нужно вынести объект в отдельную переменную, чтобы не было дубля!
+  errorClass: 'popup__error_visible'};
+
+//создание класса валидации для формы редактирования профиля
+const profileFormValidator = new FormValidator(profileValidationClasses, popupEdit);
 profileFormValidator.enableValidation();
 
-function formSubmitHandler (evt) {
-  evt.preventDefault();
-
-  profileName.textContent = nameInput.value;
-  profileDescription.textContent = jobInput.value;
-  closeModalWindow(popupEdit);
-}
 
 popupOpenButton.addEventListener ('click', ()=> {
-  openModalWindow(popupEdit);
+  const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: () =>{
+      profileName.textContent = nameInput.value;
+      profileDescription.textContent = jobInput.value;
+      profileFormPopup.close();}
+  });
+  profileFormPopup.open();
+  profileFormPopup.setEventListeners();
   nameInput.value = profileName.textContent;
   jobInput.value = profileDescription.textContent;
   profileFormValidator.resetForm();//сброс валидации формы
 });
-  popupEdit.addEventListener('mousedown', (evt) => {
-  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
-    closeModalWindow(popupEdit);
-  }
-  });
-popupEdit.addEventListener('submit', formSubmitHandler);
 
 //работа с формой добавления новых катинок
 const cardsContainer = document.querySelector('.cards');
@@ -52,14 +44,7 @@ const popupNewItem = document.querySelector('.popup_type_new-item');
 const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
 const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
 
-const addCardFormValidator = new FormValidator({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__text',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__text_type_error',
-  errorClass: 'popup__error_visible'
-}, popupNewItem);
+const addCardFormValidator = new FormValidator(profileValidationClasses, popupNewItem);
   addCardFormValidator.enableValidation();
 
  //создание новых карточек
@@ -80,31 +65,21 @@ const cardsList = new Section({
 );
 cardsList.renderItems();
 
-//создание новой при сабмите
-popupNewItem.addEventListener('submit', event => {
-  event.preventDefault();
-  const name = popupNewItemName.value;
-  const link = popupNewItemLink.value;
+//создание новой фото при сабмите
+popupNewItemOpenButton.addEventListener('click', () => {
+  const popupNewItemForm = new PopupWithForm(popupNewItem, {submitFunction: () => {const name = popupNewItemName.value;
+    const link = popupNewItemLink.value;
     if(name !=='' && link !=='') {
       const item ={name,link};
       const cardRenderer = new Section({
         items: []}, cardsContainer);
-      createCard(item,cardRenderer)
-      closeModalWindow(popupNewItem);
-  }
-});
-
-popupNewItemOpenButton.addEventListener('click', () => {
-  openModalWindow(popupNewItem);
+      createCard(item,cardRenderer);
+      popupNewItemForm.close();}}});
+  popupNewItemForm.open();
+  popupNewItemForm.setEventListeners();
   popupNewItemName.value='';
   popupNewItemLink.value='';
   addCardFormValidator.resetForm();//сброс валидации формы
-});
-
-popupNewItem.addEventListener('mousedown', (evt) => {
-if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close')) {
-  closeModalWindow(popupNewItem);
-}
 });
 
 //Кнопка закрытия изображения
@@ -113,4 +88,5 @@ if (evt.target.classList.contains('popup-image') || evt.target.classList.contain
   closeModalWindow(popupImage);
 }
 });
+
 
