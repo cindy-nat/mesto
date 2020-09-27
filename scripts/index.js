@@ -1,34 +1,29 @@
 import {Card} from "./Card.js";
 import {FormValidator} from "./FormValidator.js";
-import {initialCards, popupImage, profileValidationClasses} from "./constants.js";
+import {initialCards, popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton, profileDescription, profileName} from "./constants.js";
 import Section from "./Section.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
+import UserInfo from "./UserInfo.js";
 
 //работа с формой редактирования
-const popupEdit = document.querySelector('.popup_type_edit');
-const popupOpenButton = document.querySelector('.profile__button-edit');
-const nameInput = popupEdit.querySelector('.popup__text_type_name');
-const jobInput =  popupEdit.querySelector('.popup__text_type_description');
-const profileName = document.querySelector('.profile__name');
-const profileDescription = document.querySelector('.profile__description');
-
-
 //создание класса валидации для формы редактирования профиля
 const profileFormValidator = new FormValidator(profileValidationClasses, popupEdit);
 profileFormValidator.enableValidation();
 
+//создание класса UserInfo
+const userInfo = new UserInfo({name:profileName, description: profileDescription});
 
+//при открытии создание класса попапа
 popupOpenButton.addEventListener ('click', ()=> {
+  nameInput.value = userInfo.getUserInfo().name;
+  jobInput.value = userInfo.getUserInfo().description;
   const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: () =>{
-      profileName.textContent = nameInput.value;
-      profileDescription.textContent = jobInput.value;
+      userInfo.setUserInfo(nameInput.value, jobInput.value);
       profileFormPopup.close();}
   });
   profileFormPopup.open();
   profileFormPopup.setEventListeners();
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileDescription.textContent;
   profileFormValidator.resetForm();//сброс валидации формы
 });
 
@@ -63,7 +58,7 @@ const cardsList = new Section({
 );
 cardsList.renderItems();
 
-//создание новой фото при сабмите
+//создание новой фото при открытии попапа
 popupNewItemOpenButton.addEventListener('click', () => {
   const popupNewItemForm = new PopupWithForm(popupNewItem, {submitFunction: () => {const name = popupNewItemName.value;
     const link = popupNewItemLink.value;

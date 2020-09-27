@@ -20,15 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/utils.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +123,8 @@
       <workItem from="1600802128762" duration="51000" />
       <workItem from="1600802242325" duration="45000" />
       <workItem from="1601146365304" duration="433000" />
-      <workItem from="1601200362316" duration="1672000" />
+      <workItem from="1601200362316" duration="6521000" />
+      <workItem from="1601213712459" duration="896000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
@@ -232,6 +228,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1600167859543" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1601204368009">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1601204368009" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1601155990463">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

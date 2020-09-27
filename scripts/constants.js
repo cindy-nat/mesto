@@ -1,5 +1,11 @@
 
 export const popupImage = document.querySelector('.popup-image');
+export const popupEdit = document.querySelector('.popup_type_edit');
+export const popupOpenButton = document.querySelector('.profile__button-edit');
+export const nameInput = popupEdit.querySelector('.popup__text_type_name');
+export const jobInput =  popupEdit.querySelector('.popup__text_type_description');
+export const profileName = document.querySelector('.profile__name');
+export const profileDescription = document.querySelector('.profile__description');
 
 //карточки
 export const initialCards = [
