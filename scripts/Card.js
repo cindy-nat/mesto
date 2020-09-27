@@ -1,11 +1,15 @@
 import {popupImage} from "./constants.js";
-import {openModalWindow} from "./utils.js";
+import PopupWithImage from "./PopupWithImage.js";
 
 export class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, {handleCardClick}) {
     this._imageUrl = data.link;
     this._text = data.name;
     this._cardSelector = cardSelector;
+    this._handleDeleteCard = this._handleDeleteCard.bind(this);
+    this._handleLikeIcon = this._handleLikeIcon.bind(this);
+    this._handleCardClick = handleCardClick;
+    this._handleCardClick = this._handleCardClick.bind(this);
   }
 
   _getTemplate() {
@@ -14,9 +18,9 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._element.querySelector('.button__delete').addEventListener('click', ()=>{this._handleDeleteCard()});
-    this._element.querySelector('.cards__like').addEventListener('click', ()=>{this._handleLikeIcon()});
-    this._element.querySelector('.cards__photo').addEventListener('click', ()=>{this._handlePreviewPicture()});
+    this._element.querySelector('.button__delete').addEventListener('click', this._handleDeleteCard);
+    this._element.querySelector('.cards__like').addEventListener('click', this._handleLikeIcon);
+    this._element.querySelector('.cards__photo').addEventListener('click', this._handleCardClick);
   }
 
   _handleLikeIcon() {
@@ -27,16 +31,6 @@ export class Card {
     this._element.remove();
     this._element=null;
   }
-
-  _handlePreviewPicture() {
-    const popupImagePhoto = popupImage.querySelector('.popup-image__photo');
-    const image = this._element.querySelector('.cards__photo');
-    popupImagePhoto.src = image.src;
-    popupImagePhoto.alt = image.alt;
-    popupImage.querySelector('.popup-image__title').textContent = image.alt;
-    openModalWindow(popupImage);
-  }
-
 
   generateCard() {
     this._element = this._getTemplate();

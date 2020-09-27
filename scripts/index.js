@@ -1,9 +1,9 @@
 import {Card} from "./Card.js";
 import {FormValidator} from "./FormValidator.js";
-import {initialCards, popupImage} from "./constants.js";
-import {openModalWindow, closeModalWindow} from "./utils.js";
+import {initialCards, popupImage, profileValidationClasses} from "./constants.js";
 import Section from "./Section.js";
 import PopupWithForm from "./PopupWithForm.js";
+import PopupWithImage from "./PopupWithImage.js";
 
 //работа с формой редактирования
 const popupEdit = document.querySelector('.popup_type_edit');
@@ -12,12 +12,7 @@ const nameInput = popupEdit.querySelector('.popup__text_type_name');
 const jobInput =  popupEdit.querySelector('.popup__text_type_description');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
-const profileValidationClasses = {formSelector: '.popup__form',
-  inputSelector: '.popup__text',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__text_type_error',
-  errorClass: 'popup__error_visible'};
+
 
 //создание класса валидации для формы редактирования профиля
 const profileFormValidator = new FormValidator(profileValidationClasses, popupEdit);
@@ -49,7 +44,10 @@ const addCardFormValidator = new FormValidator(profileValidationClasses, popupNe
 
  //создание новых карточек
 const createCard = (item, renderList) => {
-  const card = new Card(item, '.new-item');
+  const popupWithImage = new PopupWithImage(popupImage);
+  //создание класса для открытия картинки
+  const card = new Card(item, '.new-item', {handleCardClick: ()=>{popupWithImage.open();
+  popupWithImage.setEventListeners();}});
   const cardElement = card.generateCard();
   renderList.addItem(cardElement);
 }
@@ -80,13 +78,6 @@ popupNewItemOpenButton.addEventListener('click', () => {
   popupNewItemName.value='';
   popupNewItemLink.value='';
   addCardFormValidator.resetForm();//сброс валидации формы
-});
-
-//Кнопка закрытия изображения
-popupImage.addEventListener('mousedown', (evt) => {
-if (evt.target.classList.contains('popup-image') || evt.target.classList.contains('popup__close')) {
-  closeModalWindow(popupImage);
-}
 });
 
 
