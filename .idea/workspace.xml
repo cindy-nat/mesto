@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/FormValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/PopupWithForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/index.js" afterDir="false" />
     </list>
@@ -125,6 +127,8 @@
       <workItem from="1601146365304" duration="433000" />
       <workItem from="1601200362316" duration="6521000" />
       <workItem from="1601213712459" duration="896000" />
+      <workItem from="1601233162564" duration="429000" />
+      <workItem from="1601290619710" duration="1259000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>

@@ -1,7 +1,4 @@
-import {popupImage} from "./constants.js";
-import PopupWithImage from "./PopupWithImage.js";
-
-export class Card {
+export default class Card {
   constructor(data, cardSelector, {handleCardClick}) {
     this._imageUrl = data.link;
     this._text = data.name;

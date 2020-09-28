@@ -1,6 +1,8 @@
-import {Card} from "./Card.js";
-import {FormValidator} from "./FormValidator.js";
-import {initialCards, popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton, profileDescription, profileName} from "./constants.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+import {initialCards, popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton,
+  profileDescription, profileName, popupNewItem, popupNewItemLink, cardsContainer, popupNewItemName,
+  popupNewItemOpenButton} from "./constants.js";
 import Section from "./Section.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
@@ -28,12 +30,7 @@ popupOpenButton.addEventListener ('click', ()=> {
 });
 
 //работа с формой добавления новых катинок
-const cardsContainer = document.querySelector('.cards');
-const popupNewItemOpenButton = document.querySelector('.profile__button-add');
-const popupNewItem = document.querySelector('.popup_type_new-item');
-const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
-const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
-
+//Создание класса валидации для новых картинок
 const addCardFormValidator = new FormValidator(profileValidationClasses, popupNewItem);
   addCardFormValidator.enableValidation();
 

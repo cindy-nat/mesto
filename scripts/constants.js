@@ -6,6 +6,11 @@ export const nameInput = popupEdit.querySelector('.popup__text_type_name');
 export const jobInput =  popupEdit.querySelector('.popup__text_type_description');
 export const profileName = document.querySelector('.profile__name');
 export const profileDescription = document.querySelector('.profile__description');
+export const cardsContainer = document.querySelector('.cards');
+export const popupNewItemOpenButton = document.querySelector('.profile__button-add');
+export const popupNewItem = document.querySelector('.popup_type_new-item');
+export const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
+export const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
 
 //карточки
 export const initialCards = [
