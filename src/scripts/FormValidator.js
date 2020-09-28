@@ -41,7 +41,7 @@ export default class FormValidator {
   }
 
 //Провекра валидности всех полей в форме
-  _hasInvalidInput =  (inputList) => {
+  _hasInvalidInput (inputList) {
     return inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     })

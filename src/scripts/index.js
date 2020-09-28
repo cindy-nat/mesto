@@ -7,6 +7,7 @@ import Section from "./Section.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 import UserInfo from "./UserInfo.js";
+import '../pages/index.css';
 
 //работа с формой редактирования
 //создание класса валидации для формы редактирования профиля
