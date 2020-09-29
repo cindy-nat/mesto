@@ -47,13 +47,16 @@ const popupNewItemForm = new PopupWithForm(popupNewItem, {submitFunction: () => 
       popupNewItemForm.close();}});
 popupNewItemForm.setEventListeners(); //установка слушателей для попапа карточек
 
+//создание попапа для открытия картинки и установка слушателей
+const popupWithImage = new PopupWithImage(popupImage);
+popupWithImage.setEventListeners();
 
  //создание новых карточек
 const createCard = (item, renderList) => {
-  const popupWithImage = new PopupWithImage(popupImage);
   //создание класса для открытия картинки
-  const card = new Card(item, '.new-item', {handleCardClick: ()=>{popupWithImage.open();
-  popupWithImage.setEventListeners();}});
+  const card = new Card(item, '.new-item', {handleCardClick: ()=>{
+      popupWithImage.open(item);
+  }});
   const cardElement = card.generateCard();
   renderList.addItem(cardElement);
 }
