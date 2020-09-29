@@ -1,13 +1,13 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+import Card from "../scripts/Card.js";
+import FormValidator from "../scripts/FormValidator.js";
 import {initialCards, popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton,
   profileDescription, profileName, popupNewItem, popupNewItemLink, cardsContainer, popupNewItemName,
-  popupNewItemOpenButton} from "./constants.js";
-import Section from "./Section.js";
-import PopupWithForm from "./PopupWithForm.js";
-import PopupWithImage from "./PopupWithImage.js";
-import UserInfo from "./UserInfo.js";
-import '../pages/index.css';
+  popupNewItemOpenButton} from "../scripts/constants.js";
+import Section from "../scripts/Section.js";
+import PopupWithForm from "../scripts/PopupWithForm.js";
+import PopupWithImage from "../scripts/PopupWithImage.js";
+import UserInfo from "../scripts/UserInfo.js";
+import './index.css';
 
 //работа с формой редактирования
 //создание класса валидации для формы редактирования профиля
