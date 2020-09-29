@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,15 +56,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\dev\mesto\src\utils" />
       <recent name="C:\Users\user\dev\mesto\src\pages" />
       <recent name="C:\Users\user\dev\mesto" />
       <recent name="C:\Users\user\dev\mesto\src\scripts" />
       <recent name="C:\Users\user\dev\mesto\src" />
-      <recent name="C:\Users\user\dev\mesto\blocks\popup-image" />
     </key>
   </component>
   <component name="RunManager">
@@ -132,7 +133,7 @@
       <workItem from="1601290619710" duration="1259000" />
       <workItem from="1601315542932" duration="1325000" />
       <workItem from="1601316910089" duration="71000" />
-      <workItem from="1601403816054" duration="327000" />
+      <workItem from="1601403816054" duration="651000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
