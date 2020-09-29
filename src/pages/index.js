@@ -75,8 +75,8 @@ cardsList.renderItems();
 //открытие попапа
 popupNewItemOpenButton.addEventListener('click', () => {
   popupNewItemForm.open();
-  popupNewItemName.value='';
-  popupNewItemLink.value='';
+  //popupNewItemName.value='';
+  //popupNewItemLink.value='';
   addCardFormValidator.resetForm();//сброс валидации формы
 });
 
