@@ -17,9 +17,8 @@ const userInfo = new UserInfo({name:profileName, description: profileDescription
 const profileFormValidator = new FormValidator(profileValidationClasses, popupEdit);
 profileFormValidator.enableValidation();
 //создание класса для попапа
-const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: () =>{
-    const inputValuesProfile = profileFormPopup._getInputValues();
-    userInfo.setUserInfo(inputValuesProfile.name, inputValuesProfile.description);
+const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: (inputValues) =>{
+    userInfo.setUserInfo(inputValues.name, inputValues.description);
     profileFormPopup.close();}
 });
 profileFormPopup.setEventListeners(); // навешивание слушателей для формы
@@ -38,12 +37,10 @@ const addCardFormValidator = new FormValidator(profileValidationClasses, popupNe
   addCardFormValidator.enableValidation();
 
   //создание класса попапа для карточек
-const popupNewItemForm = new PopupWithForm(popupNewItem, {submitFunction: () => {
-    const inputValuesNewItem = popupNewItemForm._getInputValues();
-    console.log(inputValuesNewItem);
+const popupNewItemForm = new PopupWithForm(popupNewItem, {submitFunction: (inputValues) => {
       const cardRenderer = new Section({
         items: []}, cardsContainer);
-      createCard(inputValuesNewItem,cardRenderer);
+      createCard(inputValues,cardRenderer);
       popupNewItemForm.close();}});
 popupNewItemForm.setEventListeners(); //установка слушателей для попапа карточек
 
