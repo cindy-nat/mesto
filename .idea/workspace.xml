@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,10 @@
       <workItem from="1601403816054" duration="6944000" />
       <workItem from="1601491515051" duration="976000" />
       <workItem from="1601494110999" duration="390000" />
-      <workItem from="1601549981633" duration="968000" />
+      <workItem from="1601549981633" duration="1279000" />
+      <workItem from="1601628840193" duration="609000" />
+      <workItem from="1601639660973" duration="29000" />
+      <workItem from="1602074583081" duration="105000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
@@ -219,10 +223,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1601294069221" />
-    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1601492122379">
+    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1601628849501">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1601492122379" />
+    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1601628849501" />
     <state width="1515" height="214" key="GridCell.Tab.0.bottom" timestamp="1599854527560">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
