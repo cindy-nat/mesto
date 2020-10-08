@@ -75,6 +75,26 @@
     </div>
   </div>
 
+  <div class="popup popup_type_avatar">
+    <form class="popup__form" name="popup-avatar" novalidate>
+      <h2 class="popup__title">Обновить аватар</h2>
+      <label class="popup__input-container">
+        <input id="avatar-url-input" type="url" class="popup__text popup__text_type_avatar" name="avatar" placeholder="Ссылка на новый аватар" required>
+        <span id="avatar-url-input-error" class="popup__error"></span>
+      </label>
+      <button type="submit" class="popup__submit" disabled>Сохранить</button>
+      <button type="button" class="popup__close"></button>
+    </form>
+  </div>
+
+  <div class="popup popup_type_submit">
+    <form class="popup__form" name="popup-submit" novalidate>
+      <h2 class="popup__title">Вы уверены?</h2>
+      <button type="submit" class="popup__submit" disabled>Да</button>
+      <button type="button" class="popup__close"></button>
+    </form>
+  </div>
+
   <template class="new-item">
     <div class="cards__item">
       <img src="#" alt="" class="cards__photo">

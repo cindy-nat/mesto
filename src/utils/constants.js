@@ -11,6 +11,10 @@ export const popupNewItemOpenButton = document.querySelector('.profile__button-a
 export const popupNewItem = document.querySelector('.popup_type_new-item');
 export const popupNewItemName = popupNewItem.querySelector('.popup__text_type_picture-name');
 export const popupNewItemLink = popupNewItem.querySelector('.popup__text_type_link');
+export const popupAvatarOpenButton = document.querySelector('.profile__avatar');
+export const popupAvatar = document.querySelector('.popup_type_avatar');
+export const avatarLinkInput = popupAvatar.querySelector('.popup__text_type_avatar');
+export const popupSubmit = document.querySelector('.popup_type_submit');
 
 //карточки
 export const initialCards = [

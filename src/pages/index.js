@@ -1,13 +1,16 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
-import {initialCards, popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton,
-  profileDescription, profileName, popupNewItem, popupNewItemLink, cardsContainer, popupNewItemName,
-  popupNewItemOpenButton} from "../utils/constants.js";
+import {
+  initialCards, popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton,
+  profileDescription, profileName, popupNewItem, popupNewItemLink, cardsContainer, popupNewItemName, popupAvatar,
+  popupNewItemOpenButton, popupAvatarOpenButton, popupSubmit
+} from "../utils/constants.js";
 import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
 import './index.css';
+import PopupWithSubmit from "../components/PopupWithSubmit";
 
 //создание класса UserInfo
 const userInfo = new UserInfo({name:profileName, description: profileDescription});
@@ -16,14 +19,14 @@ const userInfo = new UserInfo({name:profileName, description: profileDescription
 //создание класса валидации для формы редактирования профиля
 const profileFormValidator = new FormValidator(profileValidationClasses, popupEdit);
 profileFormValidator.enableValidation();
-//создание класса для попапа
+//создание класса для попапа редактирования информации
 const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: (inputValues) =>{
     userInfo.setUserInfo(inputValues.name, inputValues.description);
     profileFormPopup.close();}
 });
 profileFormPopup.setEventListeners(); // навешивание слушателей для формы
 
-//при открытии создание класса попапа
+//при открытии поля редактирования создание класса попапа
 popupOpenButton.addEventListener ('click', ()=> {
   nameInput.value = userInfo.getUserInfo().name;
   jobInput.value = userInfo.getUserInfo().description;
@@ -73,4 +76,23 @@ popupNewItemOpenButton.addEventListener('click', () => {
   addCardFormValidator.resetForm();//сброс валидации формы
 });
 
+//Работа с ававатаром
+//Создание попапа для аватара
+const popupAvatarForm = new PopupWithForm(popupAvatar, {submitFunction: ()=>{
+  //вставить фунцию работы с API для сабмита
+  }});
+popupAvatarForm.setEventListeners();
+//создание класса валидации для аватара
+const popupAvatarValidation = new FormValidator(profileValidationClasses, popupAvatar);
+popupAvatarValidation.enableValidation();
 
+//открытие попапа аватара при нажатии на аватар
+popupAvatarOpenButton.addEventListener('click', ()=>{
+  popupAvatarForm.open();
+  popupAvatarValidation.resetForm();
+})
+
+//Работа с удалением карточки
+//создание попапа для удаления карточки
+const popupSubmitForm = new PopupWithSubmit(popupSubmit);
+popupSubmitForm.setEventListeners();
