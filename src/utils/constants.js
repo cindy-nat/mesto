@@ -16,34 +16,6 @@ export const popupAvatar = document.querySelector('.popup_type_avatar');
 export const avatarLinkInput = popupAvatar.querySelector('.popup__text_type_avatar');
 export const popupSubmit = document.querySelector('.popup_type_submit');
 
-//карточки
-export const initialCards = [
-  {
-    picture_name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    picture_name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    picture_name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    picture_name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    picture_name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    picture_name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 export const profileValidationClasses = {formSelector: '.popup__form',
   inputSelector: '.popup__text',
   submitButtonSelector: '.popup__submit',

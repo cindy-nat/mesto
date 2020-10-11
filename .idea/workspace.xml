@@ -20,10 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/cards/__like-number/cards__like-number.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__form/popup__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__form/popup__form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__delete/button__delete.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__delete/button__delete.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__like/cards__like.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__like/cards__like.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__name/cards__name.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__name/cards__name.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__rectangle/cards__rectangle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__rectangle/cards__rectangle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__input-container/popup__input-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__input-container/popup__input-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__title/popup__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__title/popup__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
@@ -35,8 +48,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -143,7 +156,13 @@
       <workItem from="1601628840193" duration="609000" />
       <workItem from="1601639660973" duration="29000" />
       <workItem from="1602074583081" duration="1059000" />
-      <workItem from="1602159039383" duration="4815000" />
+      <workItem from="1602159039383" duration="6791000" />
+      <workItem from="1602169719341" duration="7676000" />
+      <workItem from="1602246856912" duration="369000" />
+      <workItem from="1602272669078" duration="29000" />
+      <workItem from="1602272732342" duration="8428000" />
+      <workItem from="1602352777910" duration="14504000" />
+      <workItem from="1602402648439" duration="2812000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
@@ -231,6 +250,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="deploy settings to github" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="96" key="#Inspections" timestamp="1602274607302">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="395" y="96" key="#Inspections/0.0.1536.834@0.0.1536.834" timestamp="1602274607302" />
     <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601294069221">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -255,17 +278,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1515" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599854527560" />
-    <state x="478" y="16" width="579" height="801" key="find.popup" timestamp="1601550135736">
+    <state x="478" y="16" width="579" height="801" key="find.popup" timestamp="1602241682541">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1601550135736" />
+    <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1602241682541" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1601204368009">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1601204368009" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1601494497737">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1602402733534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1601494497737" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1602402733534" />
   </component>
 </project>

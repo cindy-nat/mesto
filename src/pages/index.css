@@ -21,6 +21,7 @@
 @import url('../blocks/cards/__rectangle/cards__rectangle.css');
 @import url('../blocks/cards/__name/cards__name.css');
 @import url('../blocks/cards/__like/cards__like.css');
+@import url('../blocks/cards/__like-number/cards__like-number.css');
 @import url('../blocks/cards/__like/_clicked/cards__like_clicked.css');
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/page/__footer/page__footer.css');
