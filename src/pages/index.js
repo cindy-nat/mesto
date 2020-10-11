@@ -2,7 +2,7 @@ import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import {
   popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton,
-  profileDescription, profileName, popupNewItem, popupNewItemLink, cardsContainer, popupNewItemName, popupAvatar,
+  profileDescription, profileName, popupNewItem, cardsContainer, popupAvatar,
   popupNewItemOpenButton, popupAvatarOpenButton, popupSubmit, avatarLinkInput
 } from "../utils/constants.js";
 import Section from "../components/Section.js";

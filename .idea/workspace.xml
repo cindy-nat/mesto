@@ -20,23 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/blocks/cards/__like-number/cards__like-number.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__delete/button__delete.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__delete/button__delete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__like/cards__like.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__like/cards__like.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__name/cards__name.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__name/cards__name.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/cards/__rectangle/cards__rectangle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/cards/__rectangle/cards__rectangle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__input-container/popup__input-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__input-container/popup__input-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/__title/popup__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__title/popup__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithSubmit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
@@ -162,7 +146,7 @@
       <workItem from="1602272669078" duration="29000" />
       <workItem from="1602272732342" duration="8428000" />
       <workItem from="1602352777910" duration="14504000" />
-      <workItem from="1602402648439" duration="2812000" />
+      <workItem from="1602402648439" duration="3367000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
