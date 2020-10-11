@@ -6,14 +6,18 @@ export default class Api {
     this._headers=headers;
   }
 
+  _getResponseData(res) {
+    if (!res.ok) {
+      return Promise.reject(`Произошла ошибка ${res.status}`);
+    }
+    return res.json();
+  }
+
   //запрос информации с сервера о данных пользователя
   getInfo() {
 return fetch(`${this._baseUrl}/users/me`, {
   headers:this._headers})
-  .then(res => {
-    if(res.ok){
-      return res.json()}
-    return Promise.reject(`Произошла ошибка ${res.status}`)});
+  .then(this._getResponseData);
   }
 
   //отправка новых данных о пользователе на сервер
@@ -26,10 +30,7 @@ return fetch(`${this._baseUrl}/users/me`, {
         about: inputValues.description
       })
     })
-  .then(res => {
-        if(res.ok){
-          return res.json()}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+  .then(this._getResponseData);
   }
 
   //Изменение аватарки на сервере
@@ -41,20 +42,14 @@ return fetch(`${this._baseUrl}/users/me`, {
         avatar: avatarLink,
       })
     })
-      .then(res => {
-        if(res.ok){
-          return res.json()}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+      .then(this._getResponseData);
   }
 
   //запрос данных с сервера для получения карточек
   getCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers:this._headers})
-      .then(res => {
-        if(res.ok){
-          return res.json(); console.log(res)}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+      .then(this._getResponseData);
   }
 
   //добавление карточки на сервер
@@ -67,10 +62,7 @@ return fetch(`${this._baseUrl}/users/me`, {
         link: data.link
       })
     })
-      .then(res => {
-        if(res.ok){
-          return res.json()}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+      .then(this._getResponseData);
   }
 
   //удаление карточки с сервера
@@ -79,10 +71,7 @@ return fetch(`${this._baseUrl}/users/me`, {
       method: 'DELETE',
       headers: this._headers
     })
-      .then(res => {
-        if(res.ok){
-          return res.json()}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+      .then(this._getResponseData);
   }
 
   //Установка лайка
@@ -91,10 +80,7 @@ return fetch(`${this._baseUrl}/users/me`, {
       method: 'PUT',
       headers: this._headers
     })
-      .then(res => {
-        if(res.ok){
-          return res.json()}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+      .then(this._getResponseData);
   }
 //удаление лайка с сервера
   removeLike(cardId) {
@@ -102,9 +88,6 @@ return fetch(`${this._baseUrl}/users/me`, {
       method: 'DELETE',
       headers: this._headers
     })
-      .then(res => {
-        if(res.ok){
-          return res.json()}
-        return Promise.reject(`Произошла ошибка ${res.status}`)});
+      .then(this._getResponseData);
   }
 }

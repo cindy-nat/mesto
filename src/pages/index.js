@@ -47,15 +47,15 @@ const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: (inputVal
     api.setInfo({inputValues})
       .then(data=> {
         userInfo.setUserInfo(data.name, data.about);
-    })
+        profileFormPopup.close();
+      })
       .catch(err => console.log(err))
       .finally(()=>renderLoading(false, popupSubmitButtonEdit)); //убрать знак загрузки на сервер
-    profileFormPopup.close();
 }
 },api);
 profileFormPopup.setEventListeners(); // навешивание слушателей для формы
 
-//при открытии поля редактирования создание класса попапа
+//открытие попапа
 popupOpenButton.addEventListener ('click', ()=> {
   nameInput.value = userInfo.getUserInfo().name;
   jobInput.value = userInfo.getUserInfo().description;
@@ -102,15 +102,11 @@ const createCard = (item) => {
       handleLikeIcon: (item) => {
         const likeButton =  item._element.querySelector('.cards__like');
         //если есть лайк, то при клике лайк удаляется, количество уменьшается
-        if(likeButton.classList.contains('cards__like_clicked')) {
+        if(item.isLiked()) {
           api.removeLike(item._cardId)
             .then((res) => {
               likeButton.classList.remove('cards__like_clicked');
-              item._likeNumberElement = item._element.querySelector('.cards__like-number');
-              if(res.likes.length===0){
-                item._likeNumberElement.style.display='none';
-              }
-              item._likeNumberElement.textContent = res.likes.length;
+              item.updateLikes(res.likes.length);
               })
             .catch(err => console.log(err));
         }
@@ -118,10 +114,7 @@ const createCard = (item) => {
           api.addLike(item._cardId)
             .then((res) => {
               likeButton.classList.add('cards__like_clicked');
-              if(res.likes.length===1){
-                item._likeNumberElement = item._element.querySelector('.cards__like-number');
-                item._likeNumberElement.style.display='block';
-                item._likeNumberElement.textContent = res.likes.length;}
+              item.updateLikes(res.likes.length);
               })
             .catch(err => console.log(err));
         }

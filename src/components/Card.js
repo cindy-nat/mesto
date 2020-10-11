@@ -31,8 +31,27 @@ export default class Card {
     this._element=null;
   }
 
+  isLiked() {
+    if(this._cardLike.classList.contains('cards__like_clicked')){
+      return true;
+    }
+    else {return false};
+  }
+
+  updateLikes(length) {
+    this._likeNumberElement = this._element.querySelector('.cards__like-number');
+    if(length>0){
+      this._likeNumberElement.style.display='block';
+      this._likeNumberElement.textContent = length;
+    }
+    else {
+      this._likeNumberElement.style.display='none';
+    }
+  }
+
   generateCard() {
     this._element = this._getTemplate();
+    this._cardLike = this._element.querySelector('.cards__like');
     this._setEventListeners(); //установка обработчиков
     const newItemPhoto = this._element.querySelector('.cards__photo');
 
@@ -40,15 +59,11 @@ export default class Card {
     newItemPhoto.alt = this._text;
     this._element.querySelector('.cards__name').textContent = this._text;
     //если есть лайки, то делаем видимым количество и выводим на экран
-    if(this._likesNumber.length>0){
-      this._likeNumberElement = this._element.querySelector('.cards__like-number');
-      this._likeNumberElement.style.display='block';
-      this._likeNumberElement.textContent = this._likesNumber.length;
-    }
+    this.updateLikes(this._likesNumber.length);
     //если карточка была лайкнута, то лайк должен быть темным при загрузке
     this._likesArray.forEach(like => {
       if(like._id===this._userId) {
-        this._element.querySelector('.cards__like').classList.add('cards__like_clicked');
+        this._cardLike.classList.add('cards__like_clicked');
       }
     })
     //если мы создавали карточку, то виден знак удаления
