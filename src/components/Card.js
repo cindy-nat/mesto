@@ -47,7 +47,6 @@ export default class Card {
     }
     //если карточка была лайкнута, то лайк должен быть темным при загрузке
     this._likesArray.forEach(like => {
-      console.log(like);
       if(like._id===this._userId) {
         this._element.querySelector('.cards__like').classList.add('cards__like_clicked');
       }

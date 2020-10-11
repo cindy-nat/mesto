@@ -3,7 +3,8 @@ import FormValidator from "../components/FormValidator.js";
 import {
   popupImage, profileValidationClasses, popupEdit, jobInput, nameInput, popupOpenButton,
   profileDescription, profileName, popupNewItem, cardsContainer, popupAvatar,
-  popupNewItemOpenButton, popupAvatarOpenButton, popupSubmit, avatarLinkInput
+  popupNewItemOpenButton, popupAvatarOpenButton, popupSubmit, avatarLinkInput, popupSubmitButtonEdit,
+  popupSubmitButtonNewCard, popupSubmitButtonAvatar
 } from "../utils/constants.js";
 import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
@@ -23,6 +24,16 @@ const api = new Api({
   }
 });
 
+//функция вызываемая для указания, что что-то загружается с сервера
+function renderLoading (isLoading, submitButton) {
+  if(isLoading) {
+    submitButton.textContent = 'Сохранение...';
+  }
+  else {
+    submitButton.textContent= 'Сохранить';
+  }
+}
+
 //создание класса UserInfo
 const userInfo = new UserInfo({name:profileName, description: profileDescription});
 
@@ -32,12 +43,15 @@ const profileFormValidator = new FormValidator(profileValidationClasses, popupEd
 profileFormValidator.enableValidation();
 //создание класса для попапа редактирования информации
 const profileFormPopup = new PopupWithForm(popupEdit, {submitFunction: (inputValues) =>{
+  renderLoading(true, popupSubmitButtonEdit); //показать, что данные загружаются на сервер
     api.setInfo({inputValues})
       .then(data=> {
         userInfo.setUserInfo(data.name, data.about);
     })
-      .catch(err => console.log(err));
-    profileFormPopup.close();}
+      .catch(err => console.log(err))
+      .finally(()=>renderLoading(false, popupSubmitButtonEdit)); //убрать знак загрузки на сервер
+    profileFormPopup.close();
+}
 },api);
 profileFormPopup.setEventListeners(); // навешивание слушателей для формы
 
@@ -138,13 +152,16 @@ api.getCards()
 
     //создание класса попапа для карточек
     const popupNewItemForm = new PopupWithForm(popupNewItem, {submitFunction: (inputValues) => {
+        renderLoading(true, popupSubmitButtonNewCard);
         api.addCard({data:inputValues})
           .then(card=>{
             cardsContainer.prepend(createCard(card));
-            popupNewItemForm.close();
           })
-          .catch(err => console.log(err));
-        }},api);
+          .catch(err => console.log(err))
+          .finally(()=>{renderLoading(false, popupSubmitButtonNewCard);
+          });
+        popupNewItemForm.close();
+      }},api);
 //установка слушателей для попапа карточек
 popupNewItemForm.setEventListeners();
 
@@ -161,12 +178,16 @@ popupNewItemOpenButton.addEventListener('click', () => {
 //Работа с ававатаром
 //Создание попапа для аватара
 const popupAvatarForm = new PopupWithForm(popupAvatar, {submitFunction: ()=>{
+    renderLoading(true, popupSubmitButtonAvatar);
   api.setAvatar(avatarLinkInput.value)
     .then(data=> {
     popupAvatarOpenButton.style.backgroundImage = `url('${data.avatar}')`;
-    popupAvatarForm.close();
   })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err))
+    .finally(()=>{renderLoading(false, popupSubmitButtonAvatar);
+    });
+    popupAvatarForm.close();
+
   }},api);
 popupAvatarForm.setEventListeners();
 //создание класса валидации для аватара
