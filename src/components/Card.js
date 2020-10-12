@@ -1,10 +1,10 @@
 export default class Card {
-  constructor(data, cardSelector, {handleCardClick, handleDeleteCard, handleLikeIcon}, api) {
+  constructor(data, cardSelector, {handleCardClick, handleDeleteCard, handleLikeIcon}, api, userId) {
     this._imageUrl = data.link;
     this._text = data.name;
     this._likesNumber = data.likes;
     this._ownerId = data.owner._id;
-    this._userId = '2d32856c7e2aac0947b078ad';
+    this._userId = userId;
     this._cardId = data._id;
     this._likesArray = data.likes;
     this._cardSelector = cardSelector;

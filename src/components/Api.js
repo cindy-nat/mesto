@@ -52,6 +52,11 @@ return fetch(`${this._baseUrl}/users/me`, {
       .then(this._getResponseData);
   }
 
+  //сбор всех данных для загрузки страницы
+  getAllData() {
+    return Promise.all([this.getInfo(), this.getCards()]);
+  }
+
   //добавление карточки на сервер
   addCard({data}) {
     return fetch(`${this._baseUrl}/cards `, {
