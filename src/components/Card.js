@@ -42,14 +42,14 @@ export default class Card {
     this._likeButton =  this._element.querySelector('.cards__like');
     this._likeNumberElement = this._element.querySelector('.cards__like-number');
     //пробегаем по массиву переданных лайков и смотрим, есть ли там наш лайк, если есть, то закрашиваем сердце
-    likesArray.forEach(likeItem => {
-      if(likeItem._id===this._userId) {
+    for(let i = 0; i<likesArray.length; i++) {
+      if(likesArray[i]._id === this._userId) {
         this._likeButton.classList.add('cards__like_clicked');
+       break;
       }
-      else
       {this._likeButton.classList.remove('cards__like_clicked');
       }
-    });
+    }
     //смотрим длину массива лайков, если их нет, то цифры прячем, если есть, то показываем.
     if(likesArray.length>0){
       this._likeNumberElement.style.display='block';
@@ -57,6 +57,7 @@ export default class Card {
     }
     else {
       this._likeNumberElement.style.display='none';
+      this._likeButton.classList.remove('cards__like_clicked');
     }
   }
 
