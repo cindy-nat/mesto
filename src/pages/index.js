@@ -82,21 +82,18 @@ const createCard = (item, userID) => {
       },
       //работа с лайком
       handleLikeIcon: (item) => {
-        const likeButton =  item._element.querySelector('.cards__like');
         //если есть лайк, то при клике лайк удаляется, количество уменьшается
         if(item.isLiked()) {
           api.removeLike(item._cardId)
             .then((res) => {
-              likeButton.classList.remove('cards__like_clicked');
-              item.updateLikes(res.likes.length);
+              item.updateLikes(res.likes);
             })
             .catch(err => console.log(err));
         }
         else {
           api.addLike(item._cardId)
             .then((res) => {
-              likeButton.classList.add('cards__like_clicked');
-              item.updateLikes(res.likes.length);
+              item.updateLikes(res.likes);
             })
             .catch(err => console.log(err));
         }

@@ -2,7 +2,7 @@ export default class Card {
   constructor(data, cardSelector, {handleCardClick, handleDeleteCard, handleLikeIcon}, api, userId) {
     this._imageUrl = data.link;
     this._text = data.name;
-    this._likesNumber = data.likes;
+    this._likesNumberArray = data.likes;
     this._ownerId = data.owner._id;
     this._userId = userId;
     this._cardId = data._id;
@@ -38,11 +38,23 @@ export default class Card {
     else {return false};
   }
 
-  updateLikes(length) {
+  updateLikes(likesArray) {
+    console.log(likesArray);
+    this._likeButton =  this._element.querySelector('.cards__like');
     this._likeNumberElement = this._element.querySelector('.cards__like-number');
-    if(length>0){
+    //пробегаем по массиву переданных лайков и смотрим, есть ли там наш лайк, если есть, то закрашиваем сердце
+    likesArray.forEach(likeItem => {
+      if(likeItem._id===this._userId) {
+        this._likeButton.classList.add('cards__like_clicked');
+      }
+      else
+      {this._likeButton.classList.remove('cards__like_clicked');
+      }
+    });
+    //смотрим длину массива лайков, если их нет, то цифры прячем, если есть, то показываем.
+    if(likesArray.length>0){
       this._likeNumberElement.style.display='block';
-      this._likeNumberElement.textContent = length;
+      this._likeNumberElement.textContent = likesArray.length;
     }
     else {
       this._likeNumberElement.style.display='none';
@@ -58,14 +70,8 @@ export default class Card {
     newItemPhoto.src = this._imageUrl;
     newItemPhoto.alt = this._text;
     this._element.querySelector('.cards__name').textContent = this._text;
-    //если есть лайки, то делаем видимым количество и выводим на экран
-    this.updateLikes(this._likesNumber.length);
-    //если карточка была лайкнута, то лайк должен быть темным при загрузке
-    this._likesArray.forEach(like => {
-      if(like._id===this._userId) {
-        this._cardLike.classList.add('cards__like_clicked');
-      }
-    })
+    //делаем апдейт лайков при создании карточки
+    this.updateLikes(this._likesNumberArray);
     //если мы создавали карточку, то виден знак удаления
     if(this._ownerId===this._userId) {
       this._element.querySelector('.button__delete').style.display = 'block';
