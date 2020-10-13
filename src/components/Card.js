@@ -39,7 +39,6 @@ export default class Card {
   }
 
   updateLikes(likesArray) {
-    console.log(likesArray);
     this._likeButton =  this._element.querySelector('.cards__like');
     this._likeNumberElement = this._element.querySelector('.cards__like-number');
     //пробегаем по массиву переданных лайков и смотрим, есть ли там наш лайк, если есть, то закрашиваем сердце
