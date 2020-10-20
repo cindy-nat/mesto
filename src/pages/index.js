@@ -141,8 +141,7 @@ popupAvatarValidation.enableValidation(); //форма редактирован�
 api.getAllData()
   .then((info)=>{
     const [profileInfo, cards] = info;
-    profileName.textContent = profileInfo.name;
-    profileDescription.textContent = profileInfo.about;
+    userInfo.setUserInfo(profileInfo.name, profileInfo.about);
     popupAvatarOpenButton.style.backgroundImage = `url('${profileInfo.avatar}')`;
     cardRenderer.renderItems(cards.reverse(), {
       render: (item)=>{
