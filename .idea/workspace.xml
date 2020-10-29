@@ -16,12 +16,27 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:develop" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__container/popup-image__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__container/popup__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__figure/popup-image__figure.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__figure/popup__figure.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__photo/popup-image__photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__photo/popup__photo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__title/popup-image__title.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/popup-image.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mesto-react" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -60,11 +75,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\dev\mesto\src\blocks\popup\_type" />
+      <recent name="C:\Users\user\dev\mesto\src\blocks\popup" />
       <recent name="C:\Users\user\dev\mesto\src\utils" />
       <recent name="C:\Users\user\dev\mesto\src\pages" />
       <recent name="C:\Users\user\dev\mesto" />
-      <recent name="C:\Users\user\dev\mesto\src\scripts" />
-      <recent name="C:\Users\user\dev\mesto\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -157,7 +172,11 @@
       <workItem from="1603186503962" duration="97000" />
       <workItem from="1603187548695" duration="316000" />
       <workItem from="1603383284065" duration="4444000" />
-      <workItem from="1603564613246" duration="97000" />
+      <workItem from="1603564613246" duration="363000" />
+      <workItem from="1603566696103" duration="2000" />
+      <workItem from="1603696713520" duration="46000" />
+      <workItem from="1603874617543" duration="1989000" />
+      <workItem from="1603955302677" duration="1131000" />
     </task>
     <task id="LOCAL-00001" summary="new item popup_close + adding new item">
       <created>1597818284879</created>
@@ -226,7 +245,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -249,14 +280,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="395" y="96" key="#Inspections/0.0.1536.834@0.0.1536.834" timestamp="1602274607302" />
-    <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601294069221">
+    <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603877344427">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1601294069221" />
-    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1603187561597">
+    <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1603877344427" />
+    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1603955312876">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603187561597" />
+    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603955312876" />
     <state width="1515" height="214" key="GridCell.Tab.0.bottom" timestamp="1599854527560">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -273,10 +304,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1515" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599854527560" />
-    <state x="478" y="16" width="579" height="801" key="find.popup" timestamp="1602241682541">
+    <state x="478" y="16" width="579" height="801" key="find.popup" timestamp="1603956347075">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1602241682541" />
+    <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1603956347075" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1601204368009">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

@@ -22,7 +22,7 @@ export default class Popup {
 
   setEventListeners () {
   this._popupSelector.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup-image') ||evt.target.classList.contains('popup')|| evt.target.classList.contains('popup__close')) {
+    if (evt.target.classList.contains('popup_type_image') ||evt.target.classList.contains('popup')|| evt.target.classList.contains('popup__close')) {
       this.close();
     }
   });

@@ -1,5 +1,5 @@
 
-export const popupImage = document.querySelector('.popup-image');
+export const popupImage = document.querySelector('.popup_type_image');
 export const popupEdit = document.querySelector('.popup_type_edit');
 export const popupOpenButton = document.querySelector('.profile__button-edit');
 export const nameInput = popupEdit.querySelector('.popup__text_type_name');
