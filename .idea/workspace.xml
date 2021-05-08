@@ -25,18 +25,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__container/popup-image__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__figure/popup-image__figure.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__figure/popup__figure.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__photo/popup-image__photo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/__photo/popup__photo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/__title/popup-image__title.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup-image/popup-image.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
+    <list default="true" id="18fa6c9c-5de2-47f0-adde-79189274f692" name="Default Changelist" comment="deploy settings to github">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,47 +264,5 @@
     <MESSAGE value="." />
     <MESSAGE value="deploy settings to github" />
     <option name="LAST_COMMIT_MESSAGE" value="deploy settings to github" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="395" y="96" key="#Inspections" timestamp="1602274607302">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="395" y="96" key="#Inspections/0.0.1536.834@0.0.1536.834" timestamp="1602274607302" />
-    <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603877344427">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="531" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1603877344427" />
-    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1603955312876">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1603955312876" />
-    <state width="1515" height="214" key="GridCell.Tab.0.bottom" timestamp="1599854527560">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1515" height="214" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1599854527560" />
-    <state width="1515" height="214" key="GridCell.Tab.0.center" timestamp="1599854527560">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1515" height="214" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1599854527560" />
-    <state width="1515" height="214" key="GridCell.Tab.0.left" timestamp="1599854527560">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1515" height="214" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1599854527560" />
-    <state width="1515" height="214" key="GridCell.Tab.0.right" timestamp="1599854527560">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1515" height="214" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1599854527560" />
-    <state x="478" y="16" width="579" height="801" key="find.popup" timestamp="1603956347075">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="478" y="16" width="579" height="801" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1603956347075" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1601204368009">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1601204368009" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1602402733534">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1602402733534" />
   </component>
 </project>
